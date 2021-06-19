@@ -460,6 +460,10 @@ def check_output(prog):
 # Obtain version info from "git" program
 def git_version():
     if not os.path.exists('.git'):
+        if os.path.exists('klippy/.version'):
+            with open('klippy/.version', 'r') as f:
+                version = f.read().strip()
+                return version
         logging.debug("No '.git' file/directory found")
         return ""
     ver = check_output("git describe --always --tags --long --dirty").strip()
