@@ -8,9 +8,8 @@
       
       
       
-      
       <link rel="icon" href="img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
     
     
       
@@ -18,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.edf004c2.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -31,21 +30,19 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="_klipper3d/css/extra.css">
     
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-
   
 
 
   
-
   
 
 
@@ -68,9 +65,8 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
   
     
-    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
-      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -87,7 +83,10 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="." title="Klipper documentation" class="md-header__button md-logo" aria-label="Klipper documentation" data-md-component="logo">
       
@@ -137,12 +136,43 @@
       </form>
     
     
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh/" hreflang="zh" class="md-select__link">
+                    简体中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-Hant/" hreflang="zh-Hant" class="md-select__link">
+                    繁體中文
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
     
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -180,8 +210,7 @@
     
     
       <div class="md-header__source">
-        
-<a href="https://github.com/Klipper3d/klipper/" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/Klipper3d/klipper/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -193,11 +222,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -222,8 +254,7 @@
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/Klipper3d/klipper/" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/Klipper3d/klipper/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -341,10 +372,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
-      <label class="md-nav__link" for="__nav_7">
-        Installation and Configuration
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Installation and Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Installation and Configuration" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
@@ -353,6 +388,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -363,8 +399,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -374,10 +412,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
       
-      <label class="md-nav__link" for="__nav_7_2">
-        Configuration Reference
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Configuration Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Configuration Reference" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
@@ -386,6 +428,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -396,8 +439,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -408,14 +453,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -426,8 +474,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -437,10 +487,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
       
-      <label class="md-nav__link" for="__nav_7_4">
-        Bed Level
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_4">
+          Bed Level
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Bed Level" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_4">
           <span class="md-nav__icon md-icon"></span>
@@ -449,6 +503,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -459,8 +514,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -471,8 +528,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -483,8 +542,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -495,8 +556,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -507,8 +570,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -519,8 +584,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -531,14 +598,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -548,10 +618,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" type="checkbox" id="__nav_7_5" >
       
-      <label class="md-nav__link" for="__nav_7_5">
-        Resonance Compensation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5">
+          Resonance Compensation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Resonance Compensation" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_5">
           <span class="md-nav__icon md-icon"></span>
@@ -560,6 +634,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -570,8 +645,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -582,14 +659,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -600,8 +680,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -612,8 +694,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -623,10 +707,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_8" type="checkbox" id="__nav_7_8" >
       
-      <label class="md-nav__link" for="__nav_7_8">
-        Command templates
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_8">
+          Command templates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Command templates" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_8">
           <span class="md-nav__icon md-icon"></span>
@@ -635,6 +723,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -645,8 +734,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -657,14 +748,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -688,6 +782,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -702,8 +797,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enabling-stealthchop-mode" class="md-nav__link">
-    Enabling "Stealthchop" mode
+  <a href="#tuning-motor-current" class="md-nav__link">
+    Tuning motor current
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefer-to-not-specify-a-hold_current" class="md-nav__link">
+    Prefer to not specify a hold_current
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-spreadcycle-vs-stealthchop-mode" class="md-nav__link">
+    Setting "spreadCycle" vs "stealthChop" Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tmc-interpolate-setting-introduces-small-position-deviation" class="md-nav__link">
+    TMC interpolate setting introduces small position deviation
   </a>
   
 </li>
@@ -752,18 +868,12 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
   <a href="#find-highest-sensitivity-that-successfully-homes" class="md-nav__link">
     Find highest sensitivity that successfully homes
   </a>
   
-    <nav class="md-nav" aria-label="Find highest sensitivity that successfully homes">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#find-lowest-sensitivity-that-homes-with-one-touch" class="md-nav__link">
@@ -827,7 +937,7 @@
         
           <li class="md-nav__item">
   <a href="#can-i-use-stealthchop-mode-on-an-extruder-with-pressure-advance" class="md-nav__link">
-    Can I use stealthchop mode on an extruder with pressure advance?
+    Can I use stealthChop mode on an extruder with pressure advance?
   </a>
   
 </li>
@@ -851,11 +961,45 @@
     Why did I get a "TMC reports error: ..." error?
   </a>
   
+    <nav class="md-nav" aria-label="Why did I get a "TMC reports error: ..." error?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tmc-reports-error-ot1overtemperror" class="md-nav__link">
+    TMC reports error: ... ot=1(OvertempError!)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmc-reports-error-shorttognd-or-lowsideshort" class="md-nav__link">
+    TMC reports error: ... ShortToGND OR LowSideShort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmc-reports-error-reset1reset-or-cs_actual0reset-or-se0reset" class="md-nav__link">
+    TMC reports error: ... reset=1(Reset) OR CS_ACTUAL=0(Reset?) OR SE=0(Reset?)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmc-reports-error-uv_cp1undervoltage" class="md-nav__link">
+    TMC reports error: ... uv_cp=1(Undervoltage!)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
   <a href="#how-do-i-tune-spreadcyclecoolstepetc-mode-on-my-drivers" class="md-nav__link">
-    How do I tune spreadcycle/coolstep/etc. mode on my drivers?
+    How do I tune spreadCycle/coolStep/etc. mode on my drivers?
   </a>
   
 </li>
@@ -872,8 +1016,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -884,8 +1030,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -896,20 +1044,24 @@
     </li>
   
 
+            
           
             
+              
   
   
   
     <li class="md-nav__item">
-      <a href="skew_correction.html" class="md-nav__link">
+      <a href="Skew_Correction.html" class="md-nav__link">
         Skew correction
       </a>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -920,6 +1072,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -940,10 +1093,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
-      <label class="md-nav__link" for="__nav_8">
-        Developer Documentation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Developer Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Developer Documentation" data-md-level="1">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
@@ -952,6 +1109,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -962,8 +1120,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -974,8 +1134,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -986,8 +1148,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -998,8 +1162,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1010,8 +1176,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1022,8 +1190,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1034,8 +1204,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1046,8 +1218,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1058,18 +1232,21 @@
     </li>
   
 
+            
           
             
+              
   
   
   
     <li class="md-nav__item">
       <a href="Packaging.html" class="md-nav__link">
-        Packaging klipper
+        Packaging Klipper
       </a>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1090,10 +1267,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
-      <label class="md-nav__link" for="__nav_9">
-        Device Specific Documents
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Device Specific Documents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Device Specific Documents" data-md-level="1">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
@@ -1102,6 +1283,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1112,8 +1294,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1124,8 +1308,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1136,20 +1322,24 @@
     </li>
   
 
+            
           
             
+              
   
   
   
     <li class="md-nav__item">
-      <a href="beaglebone.html" class="md-nav__link">
+      <a href="Beaglebone.html" class="md-nav__link">
         Beaglebone
       </a>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1160,8 +1350,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1172,8 +1364,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1184,18 +1378,21 @@
     </li>
   
 
+            
           
             
+              
   
   
   
     <li class="md-nav__item">
-      <a href="HallFilamentWidthSensor.html" class="md-nav__link">
+      <a href="Hall_Filament_Width_Sensor.html" class="md-nav__link">
         Hall filament width sensor
       </a>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1215,6 +1412,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -1229,8 +1427,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enabling-stealthchop-mode" class="md-nav__link">
-    Enabling "Stealthchop" mode
+  <a href="#tuning-motor-current" class="md-nav__link">
+    Tuning motor current
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefer-to-not-specify-a-hold_current" class="md-nav__link">
+    Prefer to not specify a hold_current
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-spreadcycle-vs-stealthchop-mode" class="md-nav__link">
+    Setting "spreadCycle" vs "stealthChop" Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tmc-interpolate-setting-introduces-small-position-deviation" class="md-nav__link">
+    TMC interpolate setting introduces small position deviation
   </a>
   
 </li>
@@ -1279,18 +1498,12 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
   <a href="#find-highest-sensitivity-that-successfully-homes" class="md-nav__link">
     Find highest sensitivity that successfully homes
   </a>
   
-    <nav class="md-nav" aria-label="Find highest sensitivity that successfully homes">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#find-lowest-sensitivity-that-homes-with-one-touch" class="md-nav__link">
@@ -1354,7 +1567,7 @@
         
           <li class="md-nav__item">
   <a href="#can-i-use-stealthchop-mode-on-an-extruder-with-pressure-advance" class="md-nav__link">
-    Can I use stealthchop mode on an extruder with pressure advance?
+    Can I use stealthChop mode on an extruder with pressure advance?
   </a>
   
 </li>
@@ -1378,11 +1591,45 @@
     Why did I get a "TMC reports error: ..." error?
   </a>
   
+    <nav class="md-nav" aria-label="Why did I get a "TMC reports error: ..." error?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tmc-reports-error-ot1overtemperror" class="md-nav__link">
+    TMC reports error: ... ot=1(OvertempError!)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmc-reports-error-shorttognd-or-lowsideshort" class="md-nav__link">
+    TMC reports error: ... ShortToGND OR LowSideShort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmc-reports-error-reset1reset-or-cs_actual0reset-or-se0reset" class="md-nav__link">
+    TMC reports error: ... reset=1(Reset) OR CS_ACTUAL=0(Reset?) OR SE=0(Reset?)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tmc-reports-error-uv_cp1undervoltage" class="md-nav__link">
+    TMC reports error: ... uv_cp=1(Undervoltage!)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
   <a href="#how-do-i-tune-spreadcyclecoolstepetc-mode-on-my-drivers" class="md-nav__link">
-    How do I tune spreadcycle/coolstep/etc. mode on my drivers?
+    How do I tune spreadCycle/coolStep/etc. mode on my drivers?
   </a>
   
 </li>
@@ -1404,12 +1651,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Klipper3d/klipper/blob/master/docs/TMC_Drivers.md" title="Edit this page" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                <h1 id="tmc-drivers">TMC drivers<a class="headerlink" href="#tmc-drivers" title="Permanent link">&para;</a></h1>
+<a href="https://github.com/Klipper3d/klipper/blob/master/docs/TMC_Drivers.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="tmc-drivers">TMC drivers<a class="headerlink" href="#tmc-drivers" title="Permanent link">&para;</a></h1>
 <p>This document provides information on using Trinamic stepper motor
 drivers in SPI/UART mode on Klipper.</p>
 <p>Klipper can also use Trinamic drivers in their "standalone mode".
@@ -1418,15 +1665,88 @@ configuration is needed and the advanced Klipper features discussed in
 this document are not available.</p>
 <p>In addition to this document, be sure to review the
 <a href="Config_Reference.html#tmc-stepper-driver-configuration">TMC driver config reference</a>.</p>
-<h2 id="enabling-stealthchop-mode">Enabling "Stealthchop" mode<a class="headerlink" href="#enabling-stealthchop-mode" title="Permanent link">&para;</a></h2>
-<p>By default, Klipper places the TMC drivers in "spreadcycle" mode. If
-the driver supports "stealthchop" then it can be enabled by adding
+<h2 id="tuning-motor-current">Tuning motor current<a class="headerlink" href="#tuning-motor-current" title="Permanent link">&para;</a></h2>
+<p>A higher driver current increases positional accuracy and torque.
+However, a higher current also increases the heat produced by the
+stepper motor and the stepper motor driver. If the stepper motor
+driver gets too hot it will disable itself and Klipper will report an
+error. If the stepper motor gets too hot, it loses torque and
+positional accuracy. (If it gets very hot it may also melt plastic
+parts attached to it or near it.)</p>
+<p>As a general tuning tip, prefer higher current values as long as the
+stepper motor does not get too hot and the stepper motor driver does
+not report warnings or errors. In general, it is okay for the stepper
+motor to feel warm, but it should not become so hot that it is painful
+to touch.</p>
+<h2 id="prefer-to-not-specify-a-hold_current">Prefer to not specify a hold_current<a class="headerlink" href="#prefer-to-not-specify-a-hold_current" title="Permanent link">&para;</a></h2>
+<p>If one configures a <code>hold_current</code> then the TMC driver can reduce
+current to the stepper motor when it detects that the stepper is not
+moving. However, changing motor current may itself introduce motor
+movement. This may occur due to "detent forces" within the stepper
+motor (the permanent magnet in the rotor pulls towards the iron teeth
+in the stator) or due to external forces on the axis carriage.</p>
+<p>Most stepper motors will not obtain a significant benefit to reducing
+current during normal prints, because few printing moves will leave a
+stepper motor idle for sufficiently long to activate the
+<code>hold_current</code> feature. And, it is unlikely that one would want to
+introduce subtle print artifacts to the few printing moves that do
+leave a stepper idle sufficiently long.</p>
+<p>If one wishes to reduce current to motors during print start routines,
+then consider issuing
+<a href="G-Codes.html#set_tmc_current">SET_TMC_CURRENT</a> commands in a
+<a href="Slicers.html#klipper-gcode_macro">START_PRINT macro</a> to adjust the
+current before and after normal printing moves.</p>
+<p>Some printers with dedicated Z motors that are idle during normal
+printing moves (no bed_mesh, no bed_tilt, no Z skew_correction, no
+"vase mode" prints, etc.) may find that Z motors do run cooler with a
+<code>hold_current</code>. If implementing this then be sure to take into account
+this type of uncommanded Z axis movement during bed leveling, bed
+probing, probe calibration, and similar. The <code>driver_TPOWERDOWN</code> and
+<code>driver_IHOLDDELAY</code> should also be calibrated accordingly. If unsure,
+prefer to not specify a <code>hold_current</code>.</p>
+<h2 id="setting-spreadcycle-vs-stealthchop-mode">Setting "spreadCycle" vs "stealthChop" Mode<a class="headerlink" href="#setting-spreadcycle-vs-stealthchop-mode" title="Permanent link">&para;</a></h2>
+<p>By default, Klipper places the TMC drivers in "spreadCycle" mode. If
+the driver supports "stealthChop" then it can be enabled by adding
 <code>stealthchop_threshold: 999999</code> to the TMC config section.</p>
-<p>It is recommended to always use "spreadcycle" mode (by not specifying
-<code>stealthchop_threshold</code>) or to always use "stealthchop" mode (by
+<p>In general, spreadCycle mode provides greater torque and greater
+positional accuracy than stealthChop mode. However, stealthChop mode
+may produce significantly lower audible noise on some printers.</p>
+<p>Tests comparing modes have shown an increased "positional lag" of
+around 75% of a full-step during constant velocity moves when using
+stealthChop mode (for example, on a printer with 40mm
+rotation_distance and 200 steps_per_rotation, position deviation of
+constant speed moves increased by ~0.150mm). However, this "delay in
+obtaining the requested position" may not manifest as a significant
+print defect and one may prefer the quieter behavior of stealthChop
+mode.</p>
+<p>It is recommended to always use "spreadCycle" mode (by not specifying
+<code>stealthchop_threshold</code>) or to always use "stealthChop" mode (by
 setting <code>stealthchop_threshold</code> to 999999). Unfortunately, the drivers
 often produce poor and confusing results if the mode changes while the
 motor is at a non-zero velocity.</p>
+<h2 id="tmc-interpolate-setting-introduces-small-position-deviation">TMC interpolate setting introduces small position deviation<a class="headerlink" href="#tmc-interpolate-setting-introduces-small-position-deviation" title="Permanent link">&para;</a></h2>
+<p>The TMC driver <code>interpolate</code> setting may reduce the audible noise of
+printer movement at the cost of introducing a small systemic
+positional error. This systemic positional error results from the
+driver's delay in executing "steps" that Klipper sends it. During
+constant velocity moves, this delay results in a positional error of
+nearly half a configured microstep (more precisely, the error is half
+a microstep distance minus a 512th of a full step distance). For
+example, on an axis with a 40mm rotation_distance, 200
+steps_per_rotation, and 16 microsteps, the systemic error introduced
+during constant velocity moves is ~0.006mm.</p>
+<p>For best positional accuracy consider using spreadCycle mode and
+disable interpolation (set <code>interpolate: False</code> in the TMC driver
+config). When configured this way, one may increase the <code>microstep</code>
+setting to reduce audible noise during stepper movement. Typically, a
+microstep setting of <code>64</code> or <code>128</code> will have similar audible noise as
+interpolation, and do so without introducing a systemic positional
+error.</p>
+<p>If using stealthChop mode then the positional inaccuracy from
+interpolation is small relative to the positional inaccuracy
+introduced from stealthChop mode. Therefore tuning interpolation is
+not considered useful when in stealthChop mode, and one can leave
+interpolation in its default state.</p>
 <h2 id="sensorless-homing">Sensorless Homing<a class="headerlink" href="#sensorless-homing" title="Permanent link">&para;</a></h2>
 <p>Sensorless homing allows to home an axis without the need for a
 physical limit switch. Instead, the carriage on the axis is moved into
@@ -1463,7 +1783,7 @@ also find more details on limitations of this setup.</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <p>A few prerequisites are needed to use sensorless homing:</p>
 <ol>
-<li>A StallGuard capable TMC stepper driver (tmc2130, tmc2209, tmc2660,
+<li>A stallGuard capable TMC stepper driver (tmc2130, tmc2209, tmc2660,
    or tmc5160).</li>
 <li>SPI / UART interface of the TMC driver wired to micro-controller
    (stand-alone mode does not work).</li>
@@ -1552,7 +1872,7 @@ homing_retract_dist: 0
 homing. See the
 <a href="Config_Reference.html#tmc-stepper-driver-configuration">config reference</a>
 for all the available options.</p>
-<h3 id="find-highest-sensitivity-that-successfully-homes">Find highest sensitivity that successfully homes<a class="headerlink" href="#find-highest-sensitivity-that-successfully-homes" title="Permanent link">&para;</a></h3>
+<h4 id="find-highest-sensitivity-that-successfully-homes">Find highest sensitivity that successfully homes<a class="headerlink" href="#find-highest-sensitivity-that-successfully-homes" title="Permanent link">&para;</a></h4>
 <p>Place the carriage near the center of the rail. Use the SET_TMC_FIELD
 command to set the highest sensitivity. For tmc2209:</p>
 <div class="highlight"><pre><span></span><code>SET_TMC_FIELD STEPPER=stepper_x FIELD=SGTHRS VALUE=255
@@ -1636,20 +1956,15 @@ movement on the stepper for 2 seconds). Without a delay it is possible
 for the driver's internal stall flag to still be set from a previous
 move.</p>
 <p>It can also be useful to have that macro set the driver current before
-homing and set a new current after the carriage has moved away. This
-also allows a hold_current to be set during prints (a hold_current
-is not recommended during sensorless homing).</p>
+homing and set a new current after the carriage has moved away.</p>
 <p>An example macro might look something like:</p>
-<!-- {% raw %} -->
-
 <div class="highlight"><pre><span></span><code>[gcode_macro SENSORLESS_HOME_X]
 gcode:
     {% set HOME_CUR = 0.700 %}
     {% set driver_config = printer.configfile.settings[&#39;tmc2209 stepper_x&#39;] %}
     {% set RUN_CUR = driver_config.run_current %}
-    {% set HOLD_CUR = driver_config.hold_current %}
     # Set current for sensorless homing
-    SET_TMC_CURRENT STEPPER=stepper_x CURRENT={HOME_CUR} HOLDCURRENT={HOME_CUR}
+    SET_TMC_CURRENT STEPPER=stepper_x CURRENT={HOME_CUR}
     # Pause to ensure driver stall flag is clear
     G4 P2000
     # Home
@@ -1658,10 +1973,8 @@ gcode:
     G90
     G1 X5 F1200
     # Set current during print
-    SET_TMC_CURRENT STEPPER=stepper_x CURRENT={RUN_CUR} HOLDCURRENT={HOLD_CUR}
+    SET_TMC_CURRENT STEPPER=stepper_x CURRENT={RUN_CUR}
 </code></pre></div>
-
-<!-- {% endraw %} -->
 
 <p>The resulting macro can be called from a
 <a href="Config_Reference.html#homing_override">homing_override config section</a>
@@ -1678,7 +1991,7 @@ sensitivity" for each carriage, but be aware of the following
 restrictions:</p>
 <ol>
 <li>When using sensorless homing on CoreXY, make sure there is no
-   <code>hold_current</code> in effect for either stepper during homing.</li>
+   <code>hold_current</code> configured for either stepper.</li>
 <li>While tuning, make sure both the X and Y carriages are near the
    center of their rails before each home attempt.</li>
 <li>After tuning is complete, when homing both X and Y, use macros to
@@ -1690,10 +2003,10 @@ restrictions:</p>
    to ensure the driver's stall flag is cleared prior to homing again.</li>
 </ol>
 <h2 id="querying-and-diagnosing-driver-settings">Querying and diagnosing driver settings<a class="headerlink" href="#querying-and-diagnosing-driver-settings" title="Permanent link">&para;</a></h2>
-<p>The `<a href="G-Codes.html#tmc-stepper-drivers">DUMP_TMC command</a> is a useful
-tool when configuring and diagnosing the drivers. It will report all
-fields configured by Klipper as well as all fields that can be queried
-from the driver.</p>
+<p>The `<a href="G-Codes.html#dump_tmc">DUMP_TMC command</a> is a useful tool when
+configuring and diagnosing the drivers. It will report all fields
+configured by Klipper as well as all fields that can be queried from
+the driver.</p>
 <p>All of the reported fields are defined in the Trinamic datasheet for
 each driver. These datasheets can be found on the
 <a href="https://www.trinamic.com/">Trinamic website</a>. Obtain and review the
@@ -1705,7 +2018,7 @@ DUMP_TMC.</p>
 <a href="Config_Reference.html#tmc-stepper-driver-configuration">TMC driver config reference</a>
 has the full list of fields available for each type of driver.</p>
 <p>In addition, almost all fields can be modified at run-time using the
-<a href="G-Codes.html#tmc-stepper-drivers">SET_TMC_FIELD command</a>.</p>
+<a href="G-Codes.html#set_tmc_field">SET_TMC_FIELD command</a>.</p>
 <p>Each of these fields is defined in the Trinamic datasheet for each
 driver. These datasheets can be found on the
 <a href="https://www.trinamic.com/">Trinamic website</a>.</p>
@@ -1718,12 +2031,12 @@ states that a value of 3 must be written to the HEND field to obtain a
 "hysteresis end" of 0, then set <code>driver_HEND=3</code> to obtain the
 high-level value of 0.</p>
 <h2 id="common-questions">Common Questions<a class="headerlink" href="#common-questions" title="Permanent link">&para;</a></h2>
-<h3 id="can-i-use-stealthchop-mode-on-an-extruder-with-pressure-advance">Can I use stealthchop mode on an extruder with pressure advance?<a class="headerlink" href="#can-i-use-stealthchop-mode-on-an-extruder-with-pressure-advance" title="Permanent link">&para;</a></h3>
-<p>Many people successfully use "stealthchop" mode with Klipper's
+<h3 id="can-i-use-stealthchop-mode-on-an-extruder-with-pressure-advance">Can I use stealthChop mode on an extruder with pressure advance?<a class="headerlink" href="#can-i-use-stealthchop-mode-on-an-extruder-with-pressure-advance" title="Permanent link">&para;</a></h3>
+<p>Many people successfully use "stealthChop" mode with Klipper's
 pressure advance. Klipper implements
 <a href="Kinematics.html#pressure-advance">smooth pressure advance</a> which does
 not introduce any instantaneous velocity changes.</p>
-<p>However, "stealthchop" mode may produce lower motor torque and/or
+<p>However, "stealthChop" mode may produce lower motor torque and/or
 produce higher motor heat. It may or may not be an adequate mode for
 your particular printer.</p>
 <h3 id="i-keep-getting-unable-to-read-tmc-uart-stepper_x-register-ifcnt-errors">I keep getting "Unable to read tmc uart 'stepper_x' register IFCNT" errors?<a class="headerlink" href="#i-keep-getting-unable-to-read-tmc-uart-stepper_x-register-ifcnt-errors" title="Permanent link">&para;</a></h3>
@@ -1765,28 +2078,6 @@ disabled itself. That is, the driver stopped holding its position and
 ignored movement commands. If Klipper detects that an active driver
 has disabled itself, it will transition the printer into a "shutdown"
 state.</p>
-<p>Some common errors and tips for diagnosing them:</p>
-<p><strong>TMC reports error: ... ot=1(OvertempError!)"</strong>: This indicates the
-motor driver disabled itself because it became too hot. Typical
-solutions are to decrease the stepper motor current, increase cooling
-on the stepper motor driver, and/or increase cooling on the stepper
-motor.</p>
-<p><strong>TMC reports error: ... ShortToGND</strong> OR <strong>LowSideShort</strong>: This
-indicates the driver has disabled itself because it detected very high
-current passing through the driver. This may indicate a loose or
-shorted wire to the stepper motor or within the stepper motor itself.</p>
-<p>This error may also occur if using stealthchop mode and the TMC driver
-is not able to accurately predict the mechanical load of the motor.
-(If the driver makes a poor prediction then it may send too much
-current through the motor and trigger its own over-current detection.)
-To test this, disable stealthchop mode and check if the errors
-continue to occur.</p>
-<p><strong>TMC reports error: ... reset=1(Reset)</strong> OR <strong>CS_ACTUAL=0(Reset?)</strong>
-OR <strong>SE=0(Reset?)</strong>: This indicates that the driver has reset itself
-mid-print. This may be due to voltage or wiring issues.</p>
-<p><strong>TMC reports error: ... uv_cp=1(Undervoltage!)</strong>: This indicates the
-driver has detected a low-voltage event and has disabled itself. This
-may be due to wiring or power supply issues.</p>
 <p>It's also possible that a <strong>TMC reports error</strong> shutdown occurs due to
 SPI errors that prevent communication with the driver (on tmc2130,
 tmc5160, or tmc2660). If this occurs, it's common for the reported
@@ -1795,16 +2086,33 @@ reports error: DRV_STATUS: ffffffff ...</code> OR <code>TMC reports error:
 READRSP@RDSEL2: 00000000 ...</code>. Such a failure may be due to an SPI
 wiring problem or may be due to a self-reset or failure of the TMC
 driver.</p>
-<h3 id="how-do-i-tune-spreadcyclecoolstepetc-mode-on-my-drivers">How do I tune spreadcycle/coolstep/etc. mode on my drivers?<a class="headerlink" href="#how-do-i-tune-spreadcyclecoolstepetc-mode-on-my-drivers" title="Permanent link">&para;</a></h3>
+<p>Some common errors and tips for diagnosing them:</p>
+<h4 id="tmc-reports-error-ot1overtemperror">TMC reports error: <code>... ot=1(OvertempError!)</code><a class="headerlink" href="#tmc-reports-error-ot1overtemperror" title="Permanent link">&para;</a></h4>
+<p>This indicates the motor driver disabled itself because it became too
+hot. Typical solutions are to decrease the stepper motor current,
+increase cooling on the stepper motor driver, and/or increase cooling
+on the stepper motor.</p>
+<h4 id="tmc-reports-error-shorttognd-or-lowsideshort">TMC reports error: <code>... ShortToGND</code> OR <code>LowSideShort</code><a class="headerlink" href="#tmc-reports-error-shorttognd-or-lowsideshort" title="Permanent link">&para;</a></h4>
+<p>This indicates the driver has disabled itself because it detected very
+high current passing through the driver. This may indicate a loose or
+shorted wire to the stepper motor or within the stepper motor itself.</p>
+<p>This error may also occur if using stealthChop mode and the TMC driver
+is not able to accurately predict the mechanical load of the motor.
+(If the driver makes a poor prediction then it may send too much
+current through the motor and trigger its own over-current detection.)
+To test this, disable stealthChop mode and check if the errors
+continue to occur.</p>
+<h4 id="tmc-reports-error-reset1reset-or-cs_actual0reset-or-se0reset">TMC reports error: <code>... reset=1(Reset)</code> OR <code>CS_ACTUAL=0(Reset?)</code> OR <code>SE=0(Reset?)</code><a class="headerlink" href="#tmc-reports-error-reset1reset-or-cs_actual0reset-or-se0reset" title="Permanent link">&para;</a></h4>
+<p>This indicates that the driver has reset itself mid-print. This may be
+due to voltage or wiring issues.</p>
+<h4 id="tmc-reports-error-uv_cp1undervoltage">TMC reports error: <code>... uv_cp=1(Undervoltage!)</code><a class="headerlink" href="#tmc-reports-error-uv_cp1undervoltage" title="Permanent link">&para;</a></h4>
+<p>This indicates the driver has detected a low-voltage event and has
+disabled itself. This may be due to wiring or power supply issues.</p>
+<h3 id="how-do-i-tune-spreadcyclecoolstepetc-mode-on-my-drivers">How do I tune spreadCycle/coolStep/etc. mode on my drivers?<a class="headerlink" href="#how-do-i-tune-spreadcyclecoolstepetc-mode-on-my-drivers" title="Permanent link">&para;</a></h3>
 <p>The <a href="https://www.trinamic.com/">Trinamic website</a> has guides on
 configuring the drivers. These guides are often technical, low-level,
 and may require specialized hardware. Regardless, they are the best
 source of information.</p>
-                
-              
-              
-                
-
 
               
             </article>
@@ -1818,8 +2126,7 @@ source of information.</p>
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
@@ -1858,14 +2165,15 @@ source of information.</p>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -1875,10 +2183,10 @@ source of information.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.top", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.top", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
     
     
-      <script src="assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="assets/javascripts/bundle.e1a181d9.min.js"></script>
       
     
   </body>

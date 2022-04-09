@@ -8,9 +8,8 @@
       
       
       
-      
       <link rel="icon" href="img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
     
     
       
@@ -18,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.edf004c2.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -31,21 +30,19 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="_klipper3d/css/extra.css">
     
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-
   
 
 
   
-
   
 
 
@@ -68,9 +65,8 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
   
     
-    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
-      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -87,7 +83,10 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="." title="Klipper documentation" class="md-header__button md-logo" aria-label="Klipper documentation" data-md-component="logo">
       
@@ -137,12 +136,43 @@
       </form>
     
     
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh/" hreflang="zh" class="md-select__link">
+                    简体中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-Hant/" hreflang="zh-Hant" class="md-select__link">
+                    繁體中文
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
     
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -180,8 +210,7 @@
     
     
       <div class="md-header__source">
-        
-<a href="https://github.com/Klipper3d/klipper/" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/Klipper3d/klipper/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -193,11 +222,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -222,8 +254,7 @@
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/Klipper3d/klipper/" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/Klipper3d/klipper/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -278,6 +309,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -386,10 +418,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
       
-      <label class="md-nav__link" for="__nav_7">
-        Installation and Configuration
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Installation and Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Installation and Configuration" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
@@ -398,6 +434,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -408,8 +445,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -419,10 +458,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
       
-      <label class="md-nav__link" for="__nav_7_2">
-        Configuration Reference
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Configuration Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Configuration Reference" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
@@ -431,6 +474,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -441,8 +485,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -453,14 +499,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -471,8 +520,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -482,10 +533,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
       
-      <label class="md-nav__link" for="__nav_7_4">
-        Bed Level
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_4">
+          Bed Level
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Bed Level" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_4">
           <span class="md-nav__icon md-icon"></span>
@@ -494,6 +549,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -504,8 +560,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -516,8 +574,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -528,8 +588,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -540,8 +602,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -552,8 +616,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -564,8 +630,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -576,14 +644,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -593,10 +664,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" type="checkbox" id="__nav_7_5" >
       
-      <label class="md-nav__link" for="__nav_7_5">
-        Resonance Compensation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5">
+          Resonance Compensation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Resonance Compensation" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_5">
           <span class="md-nav__icon md-icon"></span>
@@ -605,6 +680,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -615,8 +691,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -627,14 +705,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -645,8 +726,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -657,8 +740,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -668,10 +753,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_8" type="checkbox" id="__nav_7_8" >
       
-      <label class="md-nav__link" for="__nav_7_8">
-        Command templates
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_8">
+          Command templates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Command templates" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_8">
           <span class="md-nav__icon md-icon"></span>
@@ -680,6 +769,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -690,8 +780,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -702,14 +794,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -720,8 +815,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -732,8 +829,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -744,20 +843,24 @@
     </li>
   
 
+            
           
             
+              
   
   
   
     <li class="md-nav__item">
-      <a href="skew_correction.html" class="md-nav__link">
+      <a href="Skew_Correction.html" class="md-nav__link">
         Skew correction
       </a>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -768,6 +871,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -788,10 +892,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
-      <label class="md-nav__link" for="__nav_8">
-        Developer Documentation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Developer Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Developer Documentation" data-md-level="1">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
@@ -800,6 +908,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -810,8 +919,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -822,8 +933,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -834,8 +947,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -846,8 +961,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -858,8 +975,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -870,8 +989,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -882,8 +1003,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -894,8 +1017,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -906,18 +1031,21 @@
     </li>
   
 
+            
           
             
+              
   
   
   
     <li class="md-nav__item">
       <a href="Packaging.html" class="md-nav__link">
-        Packaging klipper
+        Packaging Klipper
       </a>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -938,10 +1066,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
-      <label class="md-nav__link" for="__nav_9">
-        Device Specific Documents
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Device Specific Documents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Device Specific Documents" data-md-level="1">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
@@ -950,6 +1082,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -960,8 +1093,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -972,8 +1107,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -984,20 +1121,24 @@
     </li>
   
 
+            
           
             
+              
   
   
   
     <li class="md-nav__item">
-      <a href="beaglebone.html" class="md-nav__link">
+      <a href="Beaglebone.html" class="md-nav__link">
         Beaglebone
       </a>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1008,8 +1149,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1020,8 +1163,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1032,18 +1177,21 @@
     </li>
   
 
+            
           
             
+              
   
   
   
     <li class="md-nav__item">
-      <a href="HallFilamentWidthSensor.html" class="md-nav__link">
+      <a href="Hall_Filament_Width_Sensor.html" class="md-nav__link">
         Hall filament width sensor
       </a>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1063,6 +1211,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -1102,12 +1251,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Klipper3d/klipper/blob/master/docs/Features.md" title="Edit this page" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                <h1 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h1>
+<a href="https://github.com/Klipper3d/klipper/blob/master/docs/Features.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h1>
 <p>Klipper has several compelling features:</p>
 <ul>
 <li>High precision stepper movement. Klipper utilizes an application
@@ -1126,7 +1275,7 @@
 <li>Best in class performance. Klipper is able to achieve high stepping
   rates on both new and old micro-controllers. Even old 8bit
   micro-controllers can obtain rates over 175K steps per second. On
-  more recent micro-controllers, rates over 500K steps per second are
+  more recent micro-controllers, several million steps per second are
   possible. Higher stepper rates enable higher print velocities. The
   stepper event timing remains precise even at high speeds which
   improves overall stability.</li>
@@ -1291,85 +1440,95 @@ represent total number of steps per second on the micro-controller.</p>
 <thead>
 <tr>
 <th>Micro-controller</th>
-<th>Fastest step rate</th>
+<th>1 stepper active</th>
 <th>3 steppers active</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>16Mhz AVR</td>
-<td>154K</td>
-<td>102K</td>
+<td>157K</td>
+<td>99K</td>
 </tr>
 <tr>
 <td>20Mhz AVR</td>
-<td>192K</td>
-<td>127K</td>
+<td>196K</td>
+<td>123K</td>
 </tr>
 <tr>
 <td>Arduino Zero (SAMD21)</td>
-<td>234K</td>
-<td>217K</td>
+<td>686K</td>
+<td>471K</td>
 </tr>
 <tr>
-<td>"Blue Pill" (STM32F103)</td>
-<td>387K</td>
-<td>360K</td>
-</tr>
-<tr>
-<td>Arduino Due (SAM3X8E)</td>
-<td>438K</td>
-<td>438K</td>
-</tr>
-<tr>
-<td>Duet2 Maestro (SAM4S8C)</td>
-<td>564K</td>
-<td>564K</td>
-</tr>
-<tr>
-<td>Smoothieboard (LPC1768)</td>
-<td>574K</td>
-<td>574K</td>
-</tr>
-<tr>
-<td>Smoothieboard (LPC1769)</td>
-<td>661K</td>
-<td>661K</td>
+<td>STM32F042</td>
+<td>814K</td>
+<td>578K</td>
 </tr>
 <tr>
 <td>Beaglebone PRU</td>
-<td>680K</td>
-<td>680K</td>
+<td>866K</td>
+<td>708K</td>
+</tr>
+<tr>
+<td>STM32G0B1</td>
+<td>1103K</td>
+<td>790K</td>
+</tr>
+<tr>
+<td>"Blue Pill" (STM32F103)</td>
+<td>1180K</td>
+<td>818K</td>
+</tr>
+<tr>
+<td>Arduino Due (SAM3X8E)</td>
+<td>1273K</td>
+<td>981K</td>
+</tr>
+<tr>
+<td>Duet2 Maestro (SAM4S8C)</td>
+<td>1690K</td>
+<td>1385K</td>
+</tr>
+<tr>
+<td>Smoothieboard (LPC1768)</td>
+<td>1923K</td>
+<td>1351K</td>
+</tr>
+<tr>
+<td>Smoothieboard (LPC1769)</td>
+<td>2353K</td>
+<td>1622K</td>
+</tr>
+<tr>
+<td>Raspberry Pi Pico (RP2040)</td>
+<td>2400K</td>
+<td>1636K</td>
 </tr>
 <tr>
 <td>Duet2 Wifi/Eth (SAM4E8E)</td>
-<td>686K</td>
-<td>686K</td>
+<td>2500K</td>
+<td>1674K</td>
 </tr>
 <tr>
 <td>Adafruit Metro M4 (SAMD51)</td>
-<td>761K</td>
-<td>692K</td>
+<td>3077K</td>
+<td>1885K</td>
 </tr>
 <tr>
 <td>BigTreeTech SKR Pro (STM32F407)</td>
-<td>922K</td>
-<td>711K</td>
+<td>3652K</td>
+<td>2459K</td>
+</tr>
+<tr>
+<td>Fysetc Spider (STM32F446)</td>
+<td>3913K</td>
+<td>2634K</td>
 </tr>
 </tbody>
 </table>
-<p>On AVR platforms, the highest achievable step rate is with just one
-stepper stepping. On the SAMD21 and STM32F103 the highest step rate is
-with two simultaneous steppers stepping. On the SAM3X8E, SAM4S8C,
-SAM4E8E, LPC176x, and PRU the highest step rate is with three
-simultaneous steppers. On the SAMD51 and STM32F4 the highest step rate
-is with four simultaneous steppers. (Further details on the benchmarks
-are available in the <a href="Benchmarks.html">Benchmarks document</a>.)</p>
-                
-              
-              
-                
-
+<p>Further details on the benchmarks are available in the
+<a href="Benchmarks.html">Benchmarks document</a>.</p>
 
               
             </article>
@@ -1383,8 +1542,7 @@ are available in the <a href="Benchmarks.html">Benchmarks document</a>.)</p>
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
@@ -1423,14 +1581,15 @@ are available in the <a href="Benchmarks.html">Benchmarks document</a>.)</p>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -1440,10 +1599,10 @@ are available in the <a href="Benchmarks.html">Benchmarks document</a>.)</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.top", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.top", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
     
     
-      <script src="assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="assets/javascripts/bundle.e1a181d9.min.js"></script>
       
     
   </body>

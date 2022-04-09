@@ -8,9 +8,8 @@
       
       
       
-      
       <link rel="icon" href="img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
     
     
       
@@ -18,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.edf004c2.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -31,21 +30,19 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="_klipper3d/css/extra.css">
     
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-
   
 
 
   
-
   
 
 
@@ -68,9 +65,8 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
   
     
-    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
-      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -87,7 +83,10 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="." title="Klipper documentation" class="md-header__button md-logo" aria-label="Klipper documentation" data-md-component="logo">
       
@@ -137,12 +136,43 @@
       </form>
     
     
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh/" hreflang="zh" class="md-select__link">
+                    简体中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-Hant/" hreflang="zh-Hant" class="md-select__link">
+                    繁體中文
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
     
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -180,8 +210,7 @@
     
     
       <div class="md-header__source">
-        
-<a href="https://github.com/Klipper3d/klipper/" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/Klipper3d/klipper/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -193,11 +222,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -222,8 +254,7 @@
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/Klipper3d/klipper/" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/Klipper3d/klipper/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -341,10 +372,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
-      <label class="md-nav__link" for="__nav_7">
-        Installation and Configuration
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Installation and Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Installation and Configuration" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
@@ -353,6 +388,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -363,8 +399,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -374,10 +412,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
       
-      <label class="md-nav__link" for="__nav_7_2">
-        Configuration Reference
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Configuration Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Configuration Reference" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
@@ -386,6 +428,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -396,8 +439,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -408,14 +453,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -426,8 +474,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -437,10 +487,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
       
-      <label class="md-nav__link" for="__nav_7_4">
-        Bed Level
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_4">
+          Bed Level
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Bed Level" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_4">
           <span class="md-nav__icon md-icon"></span>
@@ -449,6 +503,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -459,8 +514,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -471,8 +528,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -483,8 +542,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -495,8 +556,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -507,8 +570,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -519,8 +584,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -531,14 +598,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -550,10 +620,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" type="checkbox" id="__nav_7_5" checked>
       
-      <label class="md-nav__link" for="__nav_7_5">
-        Resonance Compensation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5">
+          Resonance Compensation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Resonance Compensation" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_5">
           <span class="md-nav__icon md-icon"></span>
@@ -562,6 +636,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
     
@@ -585,6 +660,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -735,8 +811,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -747,14 +825,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -765,8 +846,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -777,8 +860,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -788,10 +873,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_8" type="checkbox" id="__nav_7_8" >
       
-      <label class="md-nav__link" for="__nav_7_8">
-        Command templates
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_8">
+          Command templates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Command templates" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_8">
           <span class="md-nav__icon md-icon"></span>
@@ -800,6 +889,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -810,8 +900,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -822,14 +914,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -840,8 +935,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -852,8 +949,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -864,20 +963,24 @@
     </li>
   
 
+            
           
             
+              
   
   
   
     <li class="md-nav__item">
-      <a href="skew_correction.html" class="md-nav__link">
+      <a href="Skew_Correction.html" class="md-nav__link">
         Skew correction
       </a>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -888,6 +991,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -908,10 +1012,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
-      <label class="md-nav__link" for="__nav_8">
-        Developer Documentation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Developer Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Developer Documentation" data-md-level="1">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
@@ -920,6 +1028,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -930,8 +1039,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -942,8 +1053,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -954,8 +1067,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -966,8 +1081,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -978,8 +1095,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -990,8 +1109,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1002,8 +1123,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1014,8 +1137,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1026,18 +1151,21 @@
     </li>
   
 
+            
           
             
+              
   
   
   
     <li class="md-nav__item">
       <a href="Packaging.html" class="md-nav__link">
-        Packaging klipper
+        Packaging Klipper
       </a>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1058,10 +1186,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
-      <label class="md-nav__link" for="__nav_9">
-        Device Specific Documents
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Device Specific Documents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Device Specific Documents" data-md-level="1">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
@@ -1070,6 +1202,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1080,8 +1213,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1092,8 +1227,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1104,20 +1241,24 @@
     </li>
   
 
+            
           
             
+              
   
   
   
     <li class="md-nav__item">
-      <a href="beaglebone.html" class="md-nav__link">
+      <a href="Beaglebone.html" class="md-nav__link">
         Beaglebone
       </a>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1128,8 +1269,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1140,8 +1283,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1152,18 +1297,21 @@
     </li>
   
 
+            
           
             
+              
   
   
   
     <li class="md-nav__item">
-      <a href="HallFilamentWidthSensor.html" class="md-nav__link">
+      <a href="Hall_Filament_Width_Sensor.html" class="md-nav__link">
         Hall filament width sensor
       </a>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1183,6 +1331,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -1338,12 +1487,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Klipper3d/klipper/blob/master/docs/Resonance_Compensation.md" title="Edit this page" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                <h1 id="resonance-compensation">Resonance Compensation<a class="headerlink" href="#resonance-compensation" title="Permanent link">&para;</a></h1>
+<a href="https://github.com/Klipper3d/klipper/blob/master/docs/Resonance_Compensation.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="resonance-compensation">Resonance Compensation<a class="headerlink" href="#resonance-compensation" title="Permanent link">&para;</a></h1>
 <p>Klipper supports Input Shaping - a technique that can be used to reduce ringing
 (also known as echoing, ghosting or rippling) in prints. Ringing is a surface
 printing defect when, typically, elements like edges repeat themselves on a
@@ -1361,8 +1510,8 @@ can be enabled. Besides ringing, Input Shaping typically reduces the vibrations
 and shaking of the printer in general, and may also improve the reliability
 of the stealthChop mode of Trinamic stepper drivers.</p>
 <h2 id="tuning">Tuning<a class="headerlink" href="#tuning" title="Permanent link">&para;</a></h2>
-<p>Basic tuning requires measuring the ringing frequencies of the printer and
-adding a few parameters to <code>printer.cfg</code> file.</p>
+<p>Basic tuning requires measuring the ringing frequencies of the printer
+by printing a test model.</p>
 <p>Slice the ringing test model, which can be found in
 <a href="prints/ringing_tower.stl">docs/prints/ringing_tower.stl</a>, in the slicer:</p>
 <ul>
@@ -1373,29 +1522,26 @@ adding a few parameters to <code>printer.cfg</code> file.</p>
 <li>Make sure that the minimum layer time is <strong>at most</strong> 3 seconds.</li>
 <li>Make sure any "dynamic acceleration control" is disabled in the slicer.</li>
 <li>Do not turn the model. The model has X and Y marks at the back of the model.
-   Note the unusual location of the marks vs. the axes of the printer - it is
-   not a mistake. The marks can be used later in the tuning process as a
-   reference, because they show which axis the measurements correspond to.</li>
+ Note the unusual location of the marks vs. the axes of the printer - it is
+ not a mistake. The marks can be used later in the tuning process as a
+ reference, because they show which axis the measurements correspond to.</li>
 </ul>
 <h3 id="ringing-frequency">Ringing frequency<a class="headerlink" href="#ringing-frequency" title="Permanent link">&para;</a></h3>
 <p>First, measure the <strong>ringing frequency</strong>.</p>
 <ol>
-<li>Increase <code>max_accel</code> and <code>max_accel_to_decel</code> parameters in your
-   <code>printer.cfg</code> to 7000. Note that this is only needed for tuning, and more
-   proper value will be selected in the corresponding
-   <a href="#selecting-max_accel">section</a>.</li>
-<li>If <code>square_corner_velocity</code> parameter was changed, revert it back to 5.0.
-   It is not advised to increase it when using the input shaper because it can
-   cause more smoothing in parts - it is better to use higher acceleration
-   value instead.</li>
-<li>Restart the firmware: <code>RESTART</code>.</li>
-<li>Disable Pressure Advance: <code>SET_PRESSURE_ADVANCE ADVANCE=0</code>.</li>
+<li>If <code>square_corner_velocity</code> parameter was changed, revert it back
+   to 5.0. It is not advised to increase it when using input shaper
+   because it can cause more smoothing in parts - it is better to use
+   higher acceleration value instead.</li>
+<li>Increase <code>max_accel_to_decel</code> by issuing the following command:
+   <code>SET_VELOCITY_LIMIT ACCEL_TO_DECEL=7000</code></li>
+<li>Disable Pressure Advance: <code>SET_PRESSURE_ADVANCE ADVANCE=0</code></li>
 <li>If you have already added <code>[input_shaper]</code> section to the printer.cfg,
    execute <code>SET_INPUT_SHAPER SHAPER_FREQ_X=0 SHAPER_FREQ_Y=0</code> command. If you
    get "Unknown command" error, you can safely ignore it at this point and
    continue with the measurements.</li>
-<li>Execute the command
-   <code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1250 FACTOR=100 BAND=5</code>.
+<li>Execute the command:
+   <code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1500 STEP_DELTA=500 STEP_HEIGHT=5</code>
    Basically, we try to make ringing more pronounced by setting different large
    values for acceleration. This command will increase the acceleration every
    5 mm starting from 1500 mm/sec^2: 1500 mm/sec^2, 2000 mm/sec^2, 2500 mm/sec^2
@@ -1416,14 +1562,14 @@ adding a few parameters to <code>printer.cfg</code> file.</p>
 </li>
 <li>
 <p>Count how many oscillations <em>N</em> the measured distance <em>D</em> corresponds to.
-    If you are unsure how to count the oscillations, refer to the picture
-    above, which shows <em>N</em> = 6 oscillations.</p>
+   If you are unsure how to count the oscillations, refer to the picture
+   above, which shows <em>N</em> = 6 oscillations.</p>
 </li>
 <li>Compute the ringing frequency of X axis as <em>V</em> &middot; <em>N</em> / <em>D</em> (Hz),
     where <em>V</em> is the velocity for outer perimeters (mm/sec). For the example
     above, we marked 6 oscillations, and the test was printed at 100 mm/sec
     velocity, so the frequency is 100 * 6 / 12.14 ≈ 49.4 Hz.</li>
-<li>Do (9) - (11) for Y mark as well.</li>
+<li>Do (8) - (10) for Y mark as well.</li>
 </ol>
 <p>Note that ringing on the test print should follow the pattern of the curved
 notches, as in the picture above. If it doesn't, then this defect is not really
@@ -1450,8 +1596,8 @@ printer that affect the moving mass or change the stiffness of the system,
 for example:</p>
 <ul>
 <li>Some tools are installed, removed or replaced on the toolhead that change
-    its mass, e.g. a new (heavier or lighter) stepper motor for direct extruder
-    or a new hotend is installed, heavy fan with a duct is added, etc.</li>
+ its mass, e.g. a new (heavier or lighter) stepper motor for direct extruder
+ or a new hotend is installed, heavy fan with a duct is added, etc.</li>
 <li>Belts are tightened.</li>
 <li>Some addons to increase frame rigidity are installed.</li>
 <li>Different bed is installed on a bed-slinger printer, or glass added, etc.</li>
@@ -1476,15 +1622,14 @@ configured from different considerations to reduce several resonances at once.</
 <p>For most of the printers, either MZV or EI shapers can be recommended. This
 section describes a testing process to choose between them, and figure out
 a few other related parameters.</p>
-<p>Print the ringing test model as follows (assuming you already have
-shaper_freq_x/y set and max_accel/max_accel_to_decel increased to 7000 in
-printer.cfg file):</p>
+<p>Print the ringing test model as follows:</p>
 <ol>
-<li>Restart the firmware: <code>RESTART</code>.</li>
-<li>Disable Pressure Advance: <code>SET_PRESSURE_ADVANCE ADVANCE=0</code>.</li>
-<li>Execute <code>SET_INPUT_SHAPER SHAPER_TYPE=MZV</code>.</li>
-<li>Execute the command
-   <code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1250 FACTOR=100 BAND=5</code>.</li>
+<li>Restart the firmware: <code>RESTART</code></li>
+<li>Prepare for test: <code>SET_VELOCITY_LIMIT ACCEL_TO_DECEL=7000</code></li>
+<li>Disable Pressure Advance: <code>SET_PRESSURE_ADVANCE ADVANCE=0</code></li>
+<li>Execute: <code>SET_INPUT_SHAPER SHAPER_TYPE=MZV</code></li>
+<li>Execute the command:
+   <code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1500 STEP_DELTA=500 STEP_HEIGHT=5</code></li>
 <li>Print the test model sliced with the suggested parameters.</li>
 </ol>
 <p>If you see no ringing at this point, then MZV shaper can be recommended for use.</p>
@@ -1493,8 +1638,8 @@ described in <a href="#ringing-frequency">Ringing frequency</a> section. If the 
 differ significantly from the values you obtained earlier, a more complex input
 shaper configuration is needed. You can refer to Technical details of
 <a href="#input-shapers">Input shapers</a> section. Otherwise, proceed to the next step.</p>
-<p>Now try EI input shaper. To try it, repeat steps (1)-(5) from above, but
-executing at step 3 the following command instead:
+<p>Now try EI input shaper. To try it, repeat steps (1)-(6) from above, but
+executing at step 4 the following command instead:
 <code>SET_INPUT_SHAPER SHAPER_TYPE=EI</code>.</p>
 <p>Compare two prints with MZV and EI input shaper. If EI shows noticeably better
 results than MZV, use EI shaper, otherwise prefer MZV. Note that EI shaper will
@@ -1510,25 +1655,25 @@ shaper_type: mzv
 <p>A few notes on shaper selection:</p>
 <ul>
 <li>EI shaper may be more suited for bed slinger printers (if the resonance
-    frequency and resulting smoothing allows): as more filament is deposited
-    on the moving bed, the mass of the bed increases and the resonance frequency
-    will decrease. Since EI shaper is more robust to resonance frequency
-    changes, it may work better when printing large parts.</li>
+ frequency and resulting smoothing allows): as more filament is deposited
+ on the moving bed, the mass of the bed increases and the resonance frequency
+ will decrease. Since EI shaper is more robust to resonance frequency
+ changes, it may work better when printing large parts.</li>
 <li>Due to the nature of delta kinematics, resonance frequencies can differ a
-    lot in different parts of the build volume. Therefore, EI shaper can be a
-    better fit for delta printers rather than MZV or ZV, and should be
-    considered for the use. If the resonance frequency is sufficiently large
-    (more than 50-60 Hz), then one can even attempt to test 2HUMP_EI shaper
-    (by running the suggested test above with
-    <code>SET_INPUT_SHAPER SHAPER_TYPE=2HUMP_EI</code>), but check the considerations in
-    the <a href="#selecting-max_accel">section below</a> before enabling it.</li>
+ lot in different parts of the build volume. Therefore, EI shaper can be a
+ better fit for delta printers rather than MZV or ZV, and should be
+ considered for the use. If the resonance frequency is sufficiently large
+ (more than 50-60 Hz), then one can even attempt to test 2HUMP_EI shaper
+ (by running the suggested test above with
+ <code>SET_INPUT_SHAPER SHAPER_TYPE=2HUMP_EI</code>), but check the considerations in
+ the <a href="#selecting-max_accel">section below</a> before enabling it.</li>
 </ul>
 <h3 id="selecting-max_accel">Selecting max_accel<a class="headerlink" href="#selecting-max_accel" title="Permanent link">&para;</a></h3>
 <p>You should have a printed test for the shaper you chose from the previous step
 (if you don't, print the test model sliced with the
 <a href="#tuning">suggested parameters</a> with the pressure advance disabled
 <code>SET_PRESSURE_ADVANCE ADVANCE=0</code> and with the tuning tower enabled as
-<code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1250 FACTOR=100 BAND=5</code>).
+<code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1500 STEP_DELTA=500 STEP_HEIGHT=5</code>).
 Note that at very high accelerations, depending on the resonance frequency and
 the input shaper you chose (e.g. EI shaper creates more smoothing than MZV),
 input shaping may cause too much smoothing and rounding of the parts. So,
@@ -1555,8 +1700,7 @@ If that is the case, you may need to repeat the print with the PA enabled.
 It may also be a result of a miscalibrated (too high) filament flow, so it is
 a good idea to check that too.</p>
 <p>Choose the minimum out of the two acceleration values (from ringing and
-smoothing), and put it as max_accel into printer.cfg (you can delete
-max_accel_or_decel or revert it to the old value).</p>
+smoothing), and put it as <code>max_accel</code> into printer.cfg.</p>
 <p>As a note, it may happen - especially at low ringing frequencies - that EI
 shaper will cause too much smoothing even at lower accelerations. In this case,
 MZV may be a better choice, because it may allow higher acceleration values.</p>
@@ -1578,29 +1722,29 @@ still see some ringing after printing a test model with an input shaper of
 your choice with the same frequencies as you have measured earlier), you can
 follow the steps in this section. Note that if you see ringing at different
 frequencies after enabling [input_shaper], this section will not help with that.</p>
-<p>Assuming that you have sliced the ringing model with suggested parameters and
-increased <code>max_accel</code> and <code>max_accel_to_decel</code> parameters in the <code>printer.cfg</code>
-to 7000 already, complete the following steps for each of the axes X and Y:</p>
+<p>Assuming that you have sliced the ringing model with suggested
+parameters, complete the following steps for each of the axes X and Y:</p>
 <ol>
-<li>Make sure Pressure Advance is disabled: <code>SET_PRESSURE_ADVANCE ADVANCE=0</code>.</li>
-<li>Execute <code>SET_INPUT_SHAPER SHAPER_TYPE=ZV</code>.</li>
+<li>Prepare for test: <code>SET_VELOCITY_LIMIT ACCEL_TO_DECEL=7000</code></li>
+<li>Make sure Pressure Advance is disabled: <code>SET_PRESSURE_ADVANCE ADVANCE=0</code></li>
+<li>Execute: <code>SET_INPUT_SHAPER SHAPER_TYPE=ZV</code></li>
 <li>From the existing ringing test model with your chosen input shaper select
    the acceleration that shows ringing sufficiently well, and set it with:
-   <code>SET_VELOCITY_LIMIT ACCEL=...</code>.</li>
+   <code>SET_VELOCITY_LIMIT ACCEL=...</code></li>
 <li>Calculate the necessary parameters for the <code>TUNING_TOWER</code> command to tune
    <code>shaper_freq_x</code> parameter as follows: start = shaper_freq_x * 83 / 132 and
    factor = shaper_freq_x / 66, where <code>shaper_freq_x</code> here is the current value
    in <code>printer.cfg</code>.</li>
-<li>Execute the command
+<li>Execute the command:
    <code>TUNING_TOWER COMMAND=SET_INPUT_SHAPER PARAMETER=SHAPER_FREQ_X START=start FACTOR=factor BAND=5</code>
-   using <code>start</code> and <code>factor</code> values calculated at step (4).</li>
+   using <code>start</code> and <code>factor</code> values calculated at step (5).</li>
 <li>Print the test model.</li>
 <li>Reset the original frequency value:
    <code>SET_INPUT_SHAPER SHAPER_FREQ_X=...</code>.</li>
 <li>Find the band which shows ringing the least and count its number from the
    bottom starting at 1.</li>
 <li>Calculate the new shaper_freq_x value via old
-   shaper_freq_x * (39 + 5 * #band-number) / 66.</li>
+    shaper_freq_x * (39 + 5 * #band-number) / 66.</li>
 </ol>
 <p>Repeat these steps for the Y axis in the same manner, replacing references to X
 axis with the axis Y (e.g. replace <code>shaper_freq_x</code> with <code>shaper_freq_y</code> in
@@ -1614,14 +1758,11 @@ equal to 45 * (39 + 5 * 4) / 66 ≈ 40.23.</p>
 <p>After both new <code>shaper_freq_x</code> and <code>shaper_freq_y</code> parameters have been
 calculated, you can update <code>[input_shaper]</code> section in <code>printer.cfg</code> with the
 new <code>shaper_freq_x</code> and <code>shaper_freq_y</code> values.</p>
-<p>Do not forget to revert the changes to <code>max_accel</code> and <code>max_accel_to_decel</code>
-parameters in the <code>printer.cfg</code> after finishing this section.</p>
 <h3 id="pressure-advance">Pressure Advance<a class="headerlink" href="#pressure-advance" title="Permanent link">&para;</a></h3>
 <p>If you use Pressure Advance, it may need to be re-tuned. Follow the
-<a href="Pressure_Advance.html#tuning-pressure-advance">instructions</a> to find the
-new value, if it differs from the previous one. Make sure to restore the
-original values of <code>max_accel</code> and <code>max_accel_to_decel</code> parameters in the
-<code>printer.cfg</code> and restart Klipper before tuning Pressure Advance.</p>
+<a href="Pressure_Advance.html#tuning-pressure-advance">instructions</a> to find
+the new value, if it differs from the previous one. Make sure to
+restart Klipper before tuning Pressure Advance.</p>
 <h3 id="unreliable-measurements-of-ringing-frequencies">Unreliable measurements of ringing frequencies<a class="headerlink" href="#unreliable-measurements-of-ringing-frequencies" title="Permanent link">&para;</a></h3>
 <p>If you are unable to measure the ringing frequencies, e.g. if the distance
 between the oscillations is not stable, you may still be able to take advantage
@@ -1631,26 +1772,26 @@ the test model. Note that another possibility is to purchase and install an
 accelerometer and measure the resonances with it (refer to the
 <a href="Measuring_Resonances.html">docs</a> describing the required hardware and the setup
 process) - but this option requires some crimping and soldering.</p>
-<p>For tuning, add empty <code>[input_shaper]</code> section to your <code>printer.cfg</code>. Then,
-assuming that you have sliced the ringing model with suggested parameters and
-increased <code>max_accel</code> and <code>max_accel_to_decel</code> parameters in the <code>printer.cfg</code>
-to 7000 already, print the test model 3 times as follows. First time, prior to
-printing, run</p>
+<p>For tuning, add empty <code>[input_shaper]</code> section to your
+<code>printer.cfg</code>. Then, assuming that you have sliced the ringing model
+with suggested parameters, print the test model 3 times as
+follows. First time, prior to printing, run</p>
 <ol>
 <li><code>RESTART</code></li>
-<li><code>SET_PRESSURE_ADVANCE ADVANCE=0</code>.</li>
-<li><code>SET_INPUT_SHAPER SHAPER_TYPE=2HUMP_EI SHAPER_FREQ_X=60 SHAPER_FREQ_Y=60</code>.</li>
-<li><code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1250 FACTOR=100 BAND=5</code>.</li>
+<li><code>SET_VELOCITY_LIMIT ACCEL_TO_DECEL=7000</code></li>
+<li><code>SET_PRESSURE_ADVANCE ADVANCE=0</code></li>
+<li><code>SET_INPUT_SHAPER SHAPER_TYPE=2HUMP_EI SHAPER_FREQ_X=60 SHAPER_FREQ_Y=60</code></li>
+<li><code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1500 STEP_DELTA=500 STEP_HEIGHT=5</code></li>
 </ol>
 <p>and print the model. Then print the model again, but before printing run instead</p>
 <ol>
-<li><code>SET_INPUT_SHAPER SHAPER_TYPE=2HUMP_EI SHAPER_FREQ_X=50 SHAPER_FREQ_Y=50</code>.</li>
-<li><code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1250 FACTOR=100 BAND=5</code>.</li>
+<li><code>SET_INPUT_SHAPER SHAPER_TYPE=2HUMP_EI SHAPER_FREQ_X=50 SHAPER_FREQ_Y=50</code></li>
+<li><code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1500 STEP_DELTA=500 STEP_HEIGHT=5</code></li>
 </ol>
 <p>Then print the model for the 3rd time, but now run</p>
 <ol>
-<li><code>SET_INPUT_SHAPER SHAPER_TYPE=2HUMP_EI SHAPER_FREQ_X=40 SHAPER_FREQ_Y=40</code>.</li>
-<li><code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1250 FACTOR=100 BAND=5</code>.</li>
+<li><code>SET_INPUT_SHAPER SHAPER_TYPE=2HUMP_EI SHAPER_FREQ_X=40 SHAPER_FREQ_Y=40</code></li>
+<li><code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1500 STEP_DELTA=500 STEP_HEIGHT=5</code></li>
 </ol>
 <p>Essentially, we are printing the ringing test model with TUNING_TOWER using
 2HUMP_EI shaper with shaper_freq = 60 Hz, 50 Hz, and 40 Hz.</p>
@@ -1670,8 +1811,8 @@ frequency based on the frequency of 2HUMP_EI shaper you chose:</p>
 </ul>
 <p>Now print the test model one more time, running</p>
 <ol>
-<li><code>SET_INPUT_SHAPER SHAPER_TYPE=EI SHAPER_FREQ_X=... SHAPER_FREQ_Y=...</code>.</li>
-<li><code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1250 FACTOR=100 BAND=5</code>.</li>
+<li><code>SET_INPUT_SHAPER SHAPER_TYPE=EI SHAPER_FREQ_X=... SHAPER_FREQ_Y=...</code></li>
+<li><code>TUNING_TOWER COMMAND=SET_VELOCITY_LIMIT PARAMETER=ACCEL START=1500 STEP_DELTA=500 STEP_HEIGHT=5</code></li>
 </ol>
 <p>providing the shaper_freq_x=... and shaper_freq_y=... as determined previously.</p>
 <p>If EI shaper shows very comparable good results as 2HUMP_EI shaper, stick with
@@ -1791,38 +1932,33 @@ so the values for 10% vibration tolerance are provided only for the reference.</
 <p><strong>How to use this table:</strong></p>
 <ul>
 <li>Shaper duration affects the smoothing in parts - the larger it is, the more
-    smooth the parts are. This dependency is not linear, but can give a sense of
-    which shapers 'smooth' more for the same frequency. The ordering by
-    smoothing is like this: ZV &lt; MZV &lt; ZVD ≈ EI &lt; 2HUMP_EI &lt; 3HUMP_EI. Also,
-    it is rarely practical to set shaper_freq = resonance freq for shapers
-    2HUMP_EI and 3HUMP_EI (they should be used to reduce vibrations for several
-    frequencies).</li>
+ smooth the parts are. This dependency is not linear, but can give a sense of
+ which shapers 'smooth' more for the same frequency. The ordering by
+ smoothing is like this: ZV &lt; MZV &lt; ZVD ≈ EI &lt; 2HUMP_EI &lt; 3HUMP_EI. Also,
+ it is rarely practical to set shaper_freq = resonance freq for shapers
+ 2HUMP_EI and 3HUMP_EI (they should be used to reduce vibrations for several
+ frequencies).</li>
 <li>One can estimate a range of frequencies in which the shaper reduces
-    vibrations. For example, MZV with shaper_freq = 35 Hz reduces vibrations
-    to 5% for frequencies [33.6, 36.4] Hz. 3HUMP_EI with shaper_freq = 50 Hz
-    reduces vibrations to 5% in range [27.5, 75] Hz.</li>
+ vibrations. For example, MZV with shaper_freq = 35 Hz reduces vibrations
+ to 5% for frequencies [33.6, 36.4] Hz. 3HUMP_EI with shaper_freq = 50 Hz
+ reduces vibrations to 5% in range [27.5, 75] Hz.</li>
 <li>One can use this table to check which shaper they should be using if they
-    need to reduce vibrations at several frequencies. For example, if one has
-    resonances at 35 Hz and 60 Hz on the same axis: a) EI shaper needs to have
-    shaper_freq = 35 / (1 - 0.2) = 43.75 Hz, and it will reduce resonances
-    until 43.75 * (1 + 0.2) = 52.5 Hz, so it is not sufficient; b) 2HUMP_EI
-    shaper needs to have shaper_freq = 35 / (1 - 0.35) = 53.85 Hz and will
-    reduce vibrations until 53.85 * (1 + 0.35) = 72.7 Hz - so this is an
-    acceptable configuration. Always try to use as high shaper_freq as possible
-    for a given shaper (perhaps with some safety margin, so in this example
-    shaper_freq ≈ 50-52 Hz would work best), and try to use a shaper with as
-    small shaper duration as possible.</li>
+ need to reduce vibrations at several frequencies. For example, if one has
+ resonances at 35 Hz and 60 Hz on the same axis: a) EI shaper needs to have
+ shaper_freq = 35 / (1 - 0.2) = 43.75 Hz, and it will reduce resonances
+ until 43.75 * (1 + 0.2) = 52.5 Hz, so it is not sufficient; b) 2HUMP_EI
+ shaper needs to have shaper_freq = 35 / (1 - 0.35) = 53.85 Hz and will
+ reduce vibrations until 53.85 * (1 + 0.35) = 72.7 Hz - so this is an
+ acceptable configuration. Always try to use as high shaper_freq as possible
+ for a given shaper (perhaps with some safety margin, so in this example
+ shaper_freq ≈ 50-52 Hz would work best), and try to use a shaper with as
+ small shaper duration as possible.</li>
 <li>If one needs to reduce vibrations at several very different frequencies
-    (say, 30 Hz and 100 Hz), they may see that the table above does not provide
-    enough information. In this case one may have more luck with
-    <a href="https://github.com/Klipper3d/klipper/blob/master/scripts/graph_shaper.py">scripts/graph_shaper.py</a>
-    script, which is more flexible.</li>
+ (say, 30 Hz and 100 Hz), they may see that the table above does not provide
+ enough information. In this case one may have more luck with
+ <a href="https://github.com/Klipper3d/klipper/blob/master/scripts/graph_shaper.py">scripts/graph_shaper.py</a>
+ script, which is more flexible.</li>
 </ul>
-                
-              
-              
-                
-
 
               
             </article>
@@ -1836,8 +1972,7 @@ so the values for 10% vibration tolerance are provided only for the reference.</
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
@@ -1876,14 +2011,15 @@ so the values for 10% vibration tolerance are provided only for the reference.</
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -1893,10 +2029,10 @@ so the values for 10% vibration tolerance are provided only for the reference.</
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.top", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.top", "search.suggest", "search.highlight", "search.share"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
     
     
-      <script src="assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="assets/javascripts/bundle.e1a181d9.min.js"></script>
       
     
   </body>
