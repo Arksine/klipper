@@ -209,14 +209,9 @@ class BedMesh:
                     % (z, self.fade_target))
             self.toolhead.move([x, y, z + self.fade_target, e], speed)
         else:
-            self.splitter.build_move(self.last_position, newpos, factor)
-            while not self.splitter.traverse_complete:
-                split_move = self.splitter.split()
-                if split_move:
-                    self.toolhead.move(split_move, speed)
-                else:
-                    raise self.gcode.error(
-                        "Mesh Leveling: Error splitting move ")
+            moves = self.splitter.split_move(self.last_position, newpos, factor)
+            for seg in moves:
+                self.toolhead.move(seg, speed)
         self.last_position[:] = newpos
     def get_status(self, eventtime=None):
         return self.status
@@ -751,26 +746,109 @@ class MoveSplitter:
         self.z_mesh = None
         self.fade_offset = 0.
         self.gcode = gcode
+        self.move_slope = self.y_intercept = 0.
     def initialize(self, mesh, fade_offset):
         self.z_mesh = mesh
         self.fade_offset = fade_offset
-    def build_move(self, prev_pos, next_pos, factor):
+    def split_move(self, prev_pos, next_pos, factor):
         self.prev_pos = tuple(prev_pos)
         self.next_pos = tuple(next_pos)
         self.current_pos = list(prev_pos)
         self.z_factor = factor
-        self.z_offset = self._calc_z_offset(prev_pos)
-        self.traverse_complete = False
-        self.distance_checked = 0.
         axes_d = [self.next_pos[i] - self.prev_pos[i] for i in range(4)]
-        self.total_move_length = math.sqrt(sum([d*d for d in axes_d[:3]]))
-        self.axis_move = [not isclose(d, 0., abs_tol=1e-10) for d in axes_d]
+        self.xy_move_length = math.sqrt(sum([d*d for d in axes_d[:2]]))
+        if self.xy_move_length < 1.:
+            z_offset = self._calc_z_offset(self.next_pos)
+            return [(
+                self.next_pos[0], self.next_pos[1],
+                self.next_pos[2] + z_offset,
+                self.next_pos[3]
+            )]
+        self.traverse_complete = False
+        self.distance_remaining = self.xy_move_length
+        self.axis_move = [not isclose(d, 0., abs_tol=1e-6) for d in axes_d]
+        self.axis_dir = [int(d > 0) for d in axes_d[:2]]
+        if self.axis_move[0]:
+            self.move_slope = axes_d[1] / axes_d[0]
+            self.y_intercept = (
+                self.prev_pos[1] - (self.prev_pos[0] * self.move_slope)
+            )
+        return self._do_split()
     def _calc_z_offset(self, pos):
         z = self.z_mesh.calc_z(pos[0], pos[1])
         offset = self.fade_offset
         return self.z_factor * (z - offset) + offset
-    def _set_next_move(self, distance_from_prev):
-        t = distance_from_prev / self.total_move_length
+    def _find_next_split(self):
+        # Calculate the distance to the nearest mesh boundaries on
+        # X, Y, and the diagonal
+        segments = [self.distance_remaining]
+        cpos = self.current_pos
+        xdir, ydir = self.axis_dir
+        mesh_slope = self.z_mesh.diagonal_slope
+        if self.axis_move[0]:
+            # Calc move length to the closest vertical boundary in the mesh
+            xcoord = self.z_mesh.find_vertical_boundary(cpos[0], xdir)
+            ycoord = self.move_slope * xcoord + self.y_intercept
+            move_d = [xcoord - cpos[0], ycoord - cpos[1]]
+            segments.append(math.sqrt(sum([d*d for d in move_d])))
+
+            # Check for the horizontal boundary.  If there is y movement
+            # we know we have a defined, non-zero move slope
+            if self.axis_move[1]:
+                ycoord = self.z_mesh.find_horizontal_boundary(cpos[1], ydir)
+                xcoord = (ycoord - self.y_intercept) / self.move_slope
+                move_d = [xcoord - cpos[0], ycoord - cpos[1]]
+                segments.append(math.sqrt(sum([d*d for d in move_d])))
+
+            # With X movement we should check the diagonal
+            if not isclose(self.move_slope, mesh_slope, rel_tol=1e-4):
+                # Use the x direction to determine which mesh diagonal the
+                # move segment is approaching.  Reverse if the move slope is
+                # lower than the mesh diagonal slope.
+                ddir = xdir
+                if self.move_slope < mesh_slope:
+                    ddir = int(not ddir)
+                diag_intc = self.z_mesh.find_diagonal_intercept(cpos, ddir)
+                # Solve for X with basic algebra:
+                # mesh_slope * x + diag_intc = move_slope * x + move_intercept
+                # mesh_slope * x - move_slope * x = move_intercept - diag_intc
+                # x * (mesh_slope - move_slope) = move_intercept - diag_intc
+                # x = (move_intercept - diag_intc) / (mesh_slope - move_slope)
+                xcoord = (
+                    (self.y_intercept - diag_intc) /
+                    (mesh_slope - self.move_slope)
+                )
+                ycoord = self.move_slope * xcoord + self.y_intercept
+                move_d = [xcoord - cpos[0], ycoord - cpos[1]]
+                segments.append(math.sqrt(sum([d*d for d in move_d])))
+        else:
+            # The slope is undefined, use special handling to add the
+            # horizontal and diagonal boundaries. To reach this point, we
+            # must have Y movement.
+
+            # Horizontal boundary
+            ycoord = self.z_mesh.find_horizontal_boundary(cpos[1], ydir)
+            segments.append(abs(ycoord - cpos[1]))
+
+            # Diagonal boundary
+            diag_intc = self.z_mesh.find_diagonal_intercept(cpos, ydir)
+            ycoord = mesh_slope * cpos[0] + diag_intc
+            segments.append(abs(ycoord - cpos[1]))
+
+        # Move to the shortest segment
+        next_seg = min(segments)
+        self.distance_remaining -= next_seg
+        if self.distance_remaining < 1.:
+            # end traversal here
+            self.traverse_complete = True
+            self.current_pos[:] = self.next_pos
+        else:
+            self._set_next_move()
+    def _set_next_move(self):
+        t = (
+            (self.xy_move_length - self.distance_remaining)
+            / self.xy_move_length
+        )
         if t > 1. or t < 0.:
             raise self.gcode.error(
                 "bed_mesh: Slice distance is negative "
@@ -779,31 +857,17 @@ class MoveSplitter:
             if self.axis_move[i]:
                 self.current_pos[i] = lerp(
                     t, self.prev_pos[i], self.next_pos[i])
-    def split(self):
-        if not self.traverse_complete:
-            if self.axis_move[0] or self.axis_move[1]:
-                # X and/or Y axis move, traverse if necessary
-                while self.distance_checked + self.move_check_distance \
-                        < self.total_move_length:
-                    self.distance_checked += self.move_check_distance
-                    self._set_next_move(self.distance_checked)
-                    next_z = self._calc_z_offset(self.current_pos)
-                    if abs(next_z - self.z_offset) >= self.split_delta_z:
-                        self.z_offset = next_z
-                        return self.current_pos[0], self.current_pos[1], \
-                            self.current_pos[2] + self.z_offset, \
-                            self.current_pos[3]
-            # end of move reached
-            self.current_pos[:] = self.next_pos
-            self.z_offset = self._calc_z_offset(self.current_pos)
-            # Its okay to add Z-Offset to the final move, since it will not be
-            # used again.
-            self.current_pos[2] += self.z_offset
-            self.traverse_complete = True
-            return self.current_pos
-        else:
-            # Traverse complete
-            return None
+    def _do_split(self):
+        moves = []
+        while not self.traverse_complete:
+            self._find_next_split()
+            z_offset = self._calc_z_offset(self.current_pos)
+            moves.append((
+                self.current_pos[0], self.current_pos[1],
+                self.current_pos[2] + z_offset,
+                self.current_pos[3]
+            ))
+        return moves
 
 
 class ZMesh:
@@ -841,10 +905,18 @@ class ZMesh:
         self.y_mult = mesh_y_pps + 1
         logging.debug("bed_mesh: Mesh grid size - X:%d, Y:%d"
                       % (self.mesh_x_count, self.mesh_y_count))
-        self.mesh_x_dist = (self.mesh_x_max - self.mesh_x_min) / \
-                           (self.mesh_x_count - 1)
-        self.mesh_y_dist = (self.mesh_y_max - self.mesh_y_min) / \
-                           (self.mesh_y_count - 1)
+        self.mesh_x_dist = (
+            (self.mesh_x_max - self.mesh_x_min) /
+            (self.mesh_x_count - 1)
+        )
+        self.mesh_y_dist = (
+            (self.mesh_y_max - self.mesh_y_min) /
+            (self.mesh_y_count - 1)
+        )
+        self.diagonal_slope = (
+            (self.mesh_y_max - self.mesh_y_min) /
+            (self.mesh_x_max - self.mesh_x_min)
+        )
     def get_mesh_matrix(self):
         if self.mesh_matrix is not None:
             return [[round(z, 6) for z in line]
@@ -902,6 +974,31 @@ class ZMesh:
         for i, o in enumerate(offsets):
             if o is not None:
                 self.mesh_offsets[i] = o
+    def find_vertical_boundary(self, xpos, xdir):
+        idx = int(math.floor((xpos - self.mesh_x_min) / self.mesh_x_dist))
+        idx += xdir
+        coord = self.get_x_coordinate(idx)
+        # If last positition is within .1mm of the boundary move
+        # on to the next one.
+        if isclose(xpos, coord, abs_tol=.1):
+            if xdir:
+                coord += self.mesh_x_dist
+            else:
+                coord -= self.mesh_x_dist
+        return coord
+    def find_horizontal_boundary(self, ypos, ydir):
+        idx = int(math.floor((ypos - self.mesh_y_min) / self.mesh_y_dist))
+        idx += ydir
+        coord = self.get_y_coordinate(idx)
+        if isclose(ypos, coord, abs_tol=.1):
+            if ydir:
+                coord += self.mesh_y_dist
+            else:
+                coord -= self.mesh_y_dist
+        return coord
+    def find_diagonal_intercept(self, pos, diagonal_dir):
+        y_intercept = pos[1] - pos[0] * self.diagonal_slope
+        return self.find_horizontal_boundary(y_intercept, diagonal_dir)
     def get_x_coordinate(self, index):
         return self.mesh_x_min + self.mesh_x_dist * index
     def get_y_coordinate(self, index):
