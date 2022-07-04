@@ -176,6 +176,8 @@ class TMCErrorCheck:
         self.printer.get_reactor().unregister_timer(self.check_timer)
         self.check_timer = None
     def start_checks(self):
+        if self.printer.get_start_args().get("debugoutput") is not None:
+            return False
         if self.check_timer is not None:
             self.stop_checks()
         cleared_flags = 0
