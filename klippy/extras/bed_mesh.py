@@ -94,6 +94,7 @@ class BedMesh:
         self.bmc = BedMeshCalibrate(config, self)
         self.z_mesh = None
         self.toolhead = None
+        self.initial_profile = config.get("initial_profile", "default")
         self.horizontal_move_z = config.getfloat('horizontal_move_z', 5.)
         self.fade_start = config.getfloat('fade_start', 1.)
         self.fade_end = config.getfloat('fade_end', 0.)
@@ -129,7 +130,7 @@ class BedMesh:
     def handle_connect(self):
         self.toolhead = self.printer.lookup_object('toolhead')
         self.bmc.print_generated_points(logging.info)
-        self.pmgr.initialize()
+        self.pmgr.initialize(self.initial_profile)
     def set_mesh(self, mesh):
         if mesh is not None and self.fade_end != self.FADE_DISABLE:
             self.log_fade_complete = True
@@ -1234,10 +1235,10 @@ class ProfileManager:
         self.gcode.register_command(
             'BED_MESH_PROFILE', self.cmd_BED_MESH_PROFILE,
             desc=self.cmd_BED_MESH_PROFILE_help)
-    def initialize(self):
+    def initialize(self, profile_name):
         self._check_incompatible_profiles()
-        if "default" in self.profiles:
-            self.load_profile("default")
+        if profile_name in self.profiles:
+            self.load_profile(profile_name)
     def get_profiles(self):
         return self.profiles
     def get_current_profile(self):
