@@ -8,6 +8,9 @@ import os, time, logging
 class PrinterSysStats:
     def __init__(self, config):
         printer = config.get_printer()
+        start_args = printer.get_start_args()
+        self.has_debug_output = start_args.get("debugoutput") is not None
+        self.has_debug_input = start_args.get("debuginput") is not None
         self.last_process_time = self.total_process_time = 0.
         self.last_load_avg = 0.
         self.last_mem_avail = 0
@@ -47,7 +50,9 @@ class PrinterSysStats:
     def get_status(self, eventtime):
         return {'sysload': self.last_load_avg,
                 'cputime': self.total_process_time,
-                'memavail': self.last_mem_avail}
+                'memavail': self.last_mem_avail,
+                'debug_output': self.has_debug_output,
+                'debug_input': self.has_debug_input}
 
 class PrinterStats:
     def __init__(self, config):
