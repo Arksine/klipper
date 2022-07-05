@@ -86,6 +86,28 @@ def parse_gcmd_coord(gcmd, name):
         raise gcmd.error("Unable to parse parameter '%s'" % (name,))
     return v1, v2
 
+class MeshDumpHelper:
+    def __init__(self, bedmesh, printer):
+        self.bedmesh = bedmesh
+        self.clients = {}
+        wh = printer.lookup_object('webhooks')
+        wh.register_endpoint(
+            "bed_mesh/dump_mesh", self._handle_dump_mesh_request
+        )
+    def _handle_dump_mesh_request(self, web_request):
+        cconn = web_request.get_client_connection()
+        template = web_request.get_dict('response_template', {})
+        self.clients[cconn] = template
+        web_request.send(self.bedmesh.dump_bedmesh_state())
+    def send_data(self, data):
+        for cconn, template in list(self.clients.items()):
+            if cconn.is_closed():
+                del self.clients[cconn]
+                continue
+            tmp = dict(template)
+            tmp['params'] = data
+            cconn.send(tmp)
+
 
 class BedMesh:
     FADE_DISABLE = 0x7FFFFFFF
@@ -108,6 +130,7 @@ class BedMesh:
         self.base_fade_target = config.getfloat('fade_target', None)
         self.fade_target = 0.
         self.gcode = self.printer.lookup_object('gcode')
+        self.dump_helper = MeshDumpHelper(self, self.printer)
         self.splitter = MoveSplitter(config, self.gcode)
         # setup persistent storage
         self.pmgr = ProfileManager(config, self)
@@ -169,6 +192,7 @@ class BedMesh:
         gcode_move = self.printer.lookup_object('gcode_move')
         gcode_move.reset_last_position()
         self.update_status()
+        self.dump_helper.send_data(self.dump_bedmesh_state())
     def get_z_factor(self, z_pos):
         if z_pos >= self.fade_end:
             return 0.
@@ -200,9 +224,14 @@ class BedMesh:
                 factor = constrain(factor, 0., 1.)
             final_z_adj = factor * z_adj + self.fade_target
             self.last_position[:] = [x, y, z - final_z_adj, e]
+        self.dump_helper.send_data({
+            "event": "position_reset",
+            "last_position": self.last_position
+        })
         return list(self.last_position)
     def move(self, newpos, speed):
         factor = self.get_z_factor(newpos[2])
+        moves = []
         if self.z_mesh is None or not factor:
             # No mesh calibrated, or mesh leveling phased out.
             x, y, z, e = newpos
@@ -216,6 +245,12 @@ class BedMesh:
             moves = self.splitter.split_move(self.last_position, newpos, factor)
             for seg in moves:
                 self.toolhead.move(seg, speed)
+        self.dump_helper.send_data({
+            "event": "move",
+            "newpos": newpos,
+            "adjusted": moves,
+            "factor":factor
+        })
         self.last_position[:] = newpos
     def get_status(self, eventtime=None):
         return self.status
@@ -241,6 +276,16 @@ class BedMesh:
             self.status['mesh_matrix'] = mesh_matrix
     def get_mesh(self):
         return self.z_mesh
+    def dump_bedmesh_state(self):
+        mesh_state = dict(self.status)
+        if self.z_mesh is not None:
+            mesh_state.update(self.z_mesh.dump_mesh_params())
+        mesh_state["fade_start"] = self.fade_start
+        mesh_state["fade_end"] = self.fade_end
+        mesh_state["fade_target"] = self.fade_target
+        mesh_state["last_position"] = self.last_position
+        mesh_state["event"] = "mesh_update"
+        return mesh_state
     cmd_BED_MESH_OUTPUT_help = "Retrieve interpolated grid of probed z-points"
     def cmd_BED_MESH_OUTPUT(self, gcmd):
         if gcmd.get_int('PGP', 0):
@@ -271,9 +316,13 @@ class BedMesh:
             offsets = [None, None]
             for i, axis in enumerate(['X', 'Y']):
                 offsets[i] = gcmd.get_float(axis, None)
-            self.z_mesh.set_mesh_offsets(offsets)
+            new_offsets = self.z_mesh.set_mesh_offsets(offsets)
             gcode_move = self.printer.lookup_object('gcode_move')
             gcode_move.reset_last_position()
+            self.dump_helper.send_data({
+                "event": "xy_offset_change",
+                "offsets": new_offsets
+            })
         else:
             gcmd.respond_info("No mesh loaded to offset")
 
@@ -966,6 +1015,18 @@ class ZMesh:
             print_func(msg)
         else:
             print_func("bed_mesh: Z Mesh not generated")
+    def dump_mesh_params(self):
+        params = self.mesh_params
+        return {
+            "mesh_slope": self.diagonal_slope,
+            "probe_count": (params["x_count"], params["y_count"]),
+            "mesh_min": (params["min_x"], params["min_y"]),
+            "mesh_max": (params["max_x"], params["max_y"]),
+            "mesh_pps": (params["mesh_x_pps"], params["mesh_y_pps"]),
+            "mesh_count": (self.mesh_x_count, self.mesh_y_count),
+            "mesh_dist": (self.mesh_x_dist, self.mesh_y_dist),
+            "mesh_xy_offsets": self.mesh_offsets
+        }
     def build_mesh(self, z_matrix):
         self.probed_matrix = z_matrix
         self._sample(z_matrix)
@@ -980,6 +1041,7 @@ class ZMesh:
         for i, o in enumerate(offsets):
             if o is not None:
                 self.mesh_offsets[i] = o
+        return self.mesh_offsets
     def find_vertical_boundary(self, xpos, xdir):
         idx = int(math.floor((xpos - self.mesh_x_min) / self.mesh_x_dist))
         idx += xdir
