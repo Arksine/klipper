@@ -444,7 +444,7 @@ class BedMeshCalibrate:
         orig_cfg['algo'] = mesh_cfg['algo'] = \
             config.get('algorithm', 'lagrange').strip().lower()
         orig_cfg['tension'] = mesh_cfg['tension'] = config.getfloat(
-            'bicubic_tension', .2, minval=0., maxval=2.)
+            'bicubic_tension', .5, minval=0., maxval=2.)
         for i in list(range(1, 100, 1)):
             start = config.getfloatlist("faulty_region_%d_min" % (i,), None,
                                         count=2)
