@@ -17,9 +17,12 @@ PROFILE_OPTIONS = {
 class BedMeshError(Exception):
     pass
 
-# PEP 485 isclose()
-def isclose(a, b, rel_tol=1e-09, abs_tol=0.0):
-    return abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)
+if hasattr(math, "isclose"):
+    isclose = math.isclose
+else:
+    # PEP 485 isclose()
+    def isclose(a, b, rel_tol=1e-09, abs_tol=0.0):
+        return abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)
 
 # return true if a coordinate is within the region
 # specified by min_c and max_c
