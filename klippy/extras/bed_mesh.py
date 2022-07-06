@@ -1132,14 +1132,16 @@ class ZMesh:
         x_row = self.mesh_matrix[y]
         last_pt = self.mesh_x_count - 1 - x_mult
         if x < x_mult:
-            p0 = p1 = x_row[0]
+            p1 = x_row[0]
             p2 = x_row[x_mult]
             p3 = x_row[2*x_mult]
+            p0 = (p1 + (p1 - p2))
             t = x / float(x_mult)
         elif x > last_pt:
             p0 = x_row[last_pt - x_mult]
             p1 = x_row[last_pt]
-            p2 = p3 = x_row[last_pt + x_mult]
+            p2 = x_row[last_pt + x_mult]
+            p3 = (p2 + (p2 - p1))
             t = (x - last_pt) / float(x_mult)
         else:
             found = False
@@ -1162,14 +1164,16 @@ class ZMesh:
         last_pt = self.mesh_y_count - 1 - y_mult
         y_col = self.mesh_matrix
         if y < y_mult:
-            p0 = p1 = y_col[0][x]
+            p1 = y_col[0][x]
             p2 = y_col[y_mult][x]
             p3 = y_col[2*y_mult][x]
+            p0 = (p1 + (p1 - p2))
             t = y / float(y_mult)
         elif y > last_pt:
             p0 = y_col[last_pt - y_mult][x]
             p1 = y_col[last_pt][x]
-            p2 = p3 = y_col[last_pt + y_mult][x]
+            p2 = y_col[last_pt + y_mult][x]
+            p3 = (p2 + (p2 - p1))
             t = (y - last_pt) / float(y_mult)
         else:
             found = False
