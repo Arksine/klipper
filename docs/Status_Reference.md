@@ -349,6 +349,10 @@ The following information is available in the `system_stats` object
 (this object is always available):
 - `sysload`, `cputime`, `memavail`: Information on the host operating
   system and process load.
+- `debug_input`: Set to True if Klippy is configured to receive input
+  from a file (see Klippy's `-i` option).
+- `debug_output`: Set to True if Klippy is confgured to to dump MCU
+  output to a file (see Klippy's `-o` option).
 
 ## temperature sensors
 
