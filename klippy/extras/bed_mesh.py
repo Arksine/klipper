@@ -948,6 +948,8 @@ class ZMesh:
             msg += "Mesh Offsets: X=%.4f, Y=%.4f\n" % (
                 self.mesh_offsets[0], self.mesh_offsets[1])
             msg += "Mesh Average: %.2f\n" % (self.avg_z)
+            msg += "Point Interval: X=%.4f mm, Y=%.4f mm\n" % (
+                self.mesh_x_dist, self.mesh_y_dist)
             rng = self.get_z_range()
             msg += "Mesh Range: min=%.4f max=%.4f\n" % (rng[0], rng[1])
             msg += "Interpolation Algorithm: %s\n" \
