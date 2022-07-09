@@ -8,6 +8,11 @@ All dates in this document are approximate.
 
 ## Changes
 
+20220708: The `split_delta_z` and `move_check_distance` options in
+`[bed_mesh]` are no longer used and have been deprecated.  The
+default value for the `bicubic_tension` option has been changed
+from .2 to .5.
+
 20220616: It was previously possible to flash an rp2040 in bootloader
 mode by running `make flash FLASH_DEVICE=first`. The equivalent
 command is now `make flash FLASH_DEVICE=2e8a:0003`.
