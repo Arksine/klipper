@@ -870,13 +870,6 @@ Visual Examples:
 #   set to a non-zero value it must be within the range of z-values in
 #   the mesh. Users that wish to converge to the z homing position
 #   should set this to 0. Default is the average z value of the mesh.
-#split_delta_z: .025
-#   The amount of Z difference (in mm) along a move that will trigger
-#   a split. Default is .025.
-#move_check_distance: 5.0
-#   The distance (in mm) along a move to check for split_delta_z.
-#   This is also the minimum length that a move can be split. Default
-#   is 5.0.
 #mesh_pps: 2, 2
 #   A comma separated pair of integers X, Y defining the number of
 #   points per segment to interpolate in the mesh along each axis. A
@@ -887,15 +880,20 @@ Visual Examples:
 #   The interpolation algorithm to use. May be either "lagrange" or
 #   "bicubic". This option will not affect 3x3 grids, which are forced
 #   to use lagrange sampling. Default is lagrange.
-#bicubic_tension: .2
+#bicubic_tension: .5
 #   When using the bicubic algorithm the tension parameter above may
 #   be applied to change the amount of slope interpolated. Larger
 #   numbers will increase the amount of slope, which results in more
-#   curvature in the mesh. Default is .2.
+#   curvature in the mesh. Default is .5.
 #relative_reference_index:
 #   A point index in the mesh to reference all z values to. Enabling
 #   this parameter produces a mesh relative to the probed z position
 #   at the provided index.
+#initial_profile: default
+#   The name of a saved profile to load at startup.  If the named
+#   profile does not exist then no profile will be loaded.  If this
+#   option is omitted, bed_mesh will attempt to load the "default"
+#   profile.
 #faulty_region_1_min:
 #faulty_region_1_max:
 #   Optional points that define a faulty region.  See docs/Bed_Mesh.md

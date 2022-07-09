@@ -39,15 +39,16 @@ probe_count: 5, 3
 
 - `mesh_min: 35, 6`\
   _Required_\
-  The first probed coordinate, nearest to the origin.  This coordinate
-  is relative to the probe's location.
+  The coordinate where the mesh begins, nearest to the origin (0, 0).
+  Bed mesh will use the probe's x and y offsets to adjust the tool so
+  the probe is centered over this point when calibration begins.
 
 - `mesh_max: 240, 198`\
   _Required_\
-  The probed coordinate farthest farthest from the origin.  This is not
-  necessarily the last point probed, as the probing process occurs in a
-  zig-zag fashion.  As with `mesh_min`, this coordiante is relative to
-  the probe's location.
+  The mesh coordinate farthest from the origin.  This is not necessarily
+  the last point probed, as the probing process occurs in a zig-zag fashion.
+  As with `mesh_min`, bed mesh will adjust the tool so the probe reaches
+  is centered over this location as calibration is nearing completion.
 
 - `probe_count: 5, 3`\
   _Default Value: 3, 3_\
@@ -130,7 +131,7 @@ mesh_max: 240, 198
 probe_count: 5, 3
 mesh_pps: 2, 3
 algorithm: bicubic
-bicubic_tension: 0.2
+bicubic_tension: 0.5
 ```
 
 - `mesh_pps: 2, 3`\
@@ -155,13 +156,13 @@ bicubic_tension: 0.2
   specified then lagrange sampling is forced.  If `mesh_pps` is set to 0 then
   this value is ignored as no mesh interpolation is done.
 
-- `bicubic_tension: 0.2`\
-  _Default Value: 0.2_\
+- `bicubic_tension: 0.5`\
+  _Default Value: 0.5_\
   If the `algorithm` option is set to bicubic it is possible to specify the
-  tension value.  The higher the tension the more slope is interpolated.  Be
-  careful when adjusting this, as higher values also create more overshoot,
-  which will result in interpolated values higher or lower than your probed
-  points.
+  tension value.  This value affects how curvature is interpolated into
+  the mesh. Higher values may overshoot probed locations, whereas lower values
+  may undershoot.  The default value of 0.5 is known as a "Catmull-Rom"
+  spline which tends to generate the most consistent results.
 
 The illustration below shows how the options above are used to generate an
 interpolated mesh.
@@ -170,44 +171,38 @@ interpolated mesh.
 
 ### Move Splitting
 
-Bed Mesh works by intercepting gcode move commands and applying a
-transform to their Z coordinate. Long moves must be split into smaller
-moves to correctly follow the shape of the bed. The options below
-control the splitting behavior.
+To correctly follow the shape of the print surface incoming moves must be
+split into segments, with a Z adjustment applied to each segment.
+The mesh is represented by a set of triangles; bed mesh will split a move
+each time it intersects with an edge of a triangle. The interval between
+each point on the X and Y axes determines the split frequency.  Klippy's
+CPU usage will scale up with split frequency, something to keep in mind
+if the configuration results in an extremely dense mesh.
 
-```
+The point intervals are reported by `BED_MESH_OUTPUT`.  Below is an example
+of how to manually calculate the point interval on the X axis from the
+configured `mesh_min`, `mesh_max`, `mesh_pps`, and `probe_count` options:
+
+```ini
+# Assume the following configuration
 [bed_mesh]
 speed: 120
 horizontal_move_z: 5
 mesh_min: 35, 6
 mesh_max: 240, 198
 probe_count: 5, 3
-move_check_distance: 5
-split_delta_z: .025
+mesh_pps: 2, 3
 ```
 
-- `move_check_distance: 5`\
-  _Default Value: 5_\
-  The minimum distance to check for the desired change in Z before performing
-  a split.  In this example, a move longer than 5mm will be traversed by the
-  algorithm.  Each 5mm a mesh Z lookup will occur, comparing it with the Z
-  value of the previous move.  If the delta meets the threshold set by
-  `split_delta_z`, the move will be split and traversal will continue.  This
-  process repeats until the end of the move is reached, where a final
-  adjustment will be applied.  Moves shorter than the `move_check_distance`
-  have the correct Z adjustment applied directly to the move without
-  traversal or splitting.
-
-- `split_delta_z: .025`\
-  _Default Value: .025_\
-  As mentioned above, this is the minimum deviation required to trigger a
-  move split.  In this example, any Z value with a deviation +/- .025mm
-  will trigger a split.
-
-Generally the default values for these options are sufficient, in fact the
-default value of 5mm for the `move_check_distance` may be overkill. However an
-advanced user may wish to experiment with these options in an effort to squeeze
-out the optimial first layer.
+```
+mesh_x_min = 35
+mesh_x_max = 240
+x_probe_count = 5
+x_pps = 2
+mesh_x_range = mesh_x_max - mesh_x_min = 205
+total_x_points = (x_probe_count - 1) * x_pps + x_probe_count = 13
+point_interval = mesh_x_range / (total_x_points - 1) = 17.08 mm
+```
 
 ### Mesh Fade
 
