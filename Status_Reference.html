@@ -810,6 +810,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bed_screws" class="md-nav__link">
+    bed_screws
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configfile" class="md-nav__link">
     configfile
   </a>
@@ -833,6 +840,13 @@
         <li class="md-nav__item">
   <a href="#exclude_object" class="md-nav__link">
     exclude_object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extruder_stepper" class="md-nav__link">
+    extruder_stepper
   </a>
   
 </li>
@@ -985,8 +999,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#screws_tilt_adjust" class="md-nav__link">
+    screws_tilt_adjust
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#servo" class="md-nav__link">
     servo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stepper_enable" class="md-nav__link">
+    stepper_enable
   </a>
   
 </li>
@@ -1050,6 +1078,13 @@
         <li class="md-nav__item">
   <a href="#webhooks" class="md-nav__link">
     webhooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#z_thermal_adjust" class="md-nav__link">
+    z_thermal_adjust
   </a>
   
 </li>
@@ -1543,6 +1578,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bed_screws" class="md-nav__link">
+    bed_screws
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configfile" class="md-nav__link">
     configfile
   </a>
@@ -1566,6 +1608,13 @@
         <li class="md-nav__item">
   <a href="#exclude_object" class="md-nav__link">
     exclude_object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extruder_stepper" class="md-nav__link">
+    extruder_stepper
   </a>
   
 </li>
@@ -1718,8 +1767,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#screws_tilt_adjust" class="md-nav__link">
+    screws_tilt_adjust
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#servo" class="md-nav__link">
     servo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stepper_enable" class="md-nav__link">
+    stepper_enable
   </a>
   
 </li>
@@ -1788,6 +1851,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#z_thermal_adjust" class="md-nav__link">
+    z_thermal_adjust
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#z_tilt" class="md-nav__link">
     z_tilt
   </a>
@@ -1837,6 +1907,17 @@ Klipper software.</p>
   <code>mesh_matrix</code>: Information on the currently active bed_mesh.</li>
 <li><code>profiles</code>: The set of currently defined profiles as setup
    using BED_MESH_PROFILE.</li>
+</ul>
+<h2 id="bed_screws">bed_screws<a class="headerlink" href="#bed_screws" title="Permanent link">&para;</a></h2>
+<p>The following information is available in the
+<code>Config_Reference.md#bed_screws</code> object:</p>
+<ul>
+<li><code>is_active</code>: Returns True if the bed screws adjustment tool is currently
+active.</li>
+<li><code>state</code>: The bed screws adjustment tool state. It is one of
+the following strings: "adjust", "fine".</li>
+<li><code>current_screw</code>: The index for the current screw being adjusted.</li>
+<li><code>accepted_screws</code>: The number of accepted screws.</li>
 </ul>
 <h2 id="configfile">configfile<a class="headerlink" href="#configfile" title="Permanent link">&para;</a></h2>
 <p>The following information is available in the <code>configfile</code> object
@@ -1920,6 +2001,16 @@ Klipper software.</p>
 <ul>
 <li><code>excluded_objects</code>: An array of strings listing the names of excluded objects.</li>
 <li><code>current_object</code>: The name of the object currently being printed.</li>
+</ul>
+<h2 id="extruder_stepper">extruder_stepper<a class="headerlink" href="#extruder_stepper" title="Permanent link">&para;</a></h2>
+<p>The following information is available for extruder_stepper objects (as well as
+<a href="Config_Reference.html#extruder">extruder</a> objects):</p>
+<ul>
+<li><code>pressure_advance</code>: The current <a href="Pressure_Advance.html">pressure advance</a> value.</li>
+<li><code>smooth_time</code>: The current pressure advance smooth time.</li>
+<li><code>motion_queue</code>: The name of the extruder that this extruder stepper is
+  currently synchronized to.  This is reported as <code>None</code> if the extruder stepper
+  is not currently associated with an extruder.</li>
 </ul>
 <h2 id="fan">fan<a class="headerlink" href="#fan" title="Permanent link">&para;</a></h2>
 <p>The following information is available in
@@ -2124,8 +2215,12 @@ is defined):</p>
 defined):</p>
 <ul>
 <li><code>filename</code>, <code>total_duration</code>, <code>print_duration</code>, <code>filament_used</code>,
-  <code>state</code>, <code>message</code>: Estimated information about the current print
-  when a virtual_sdcard print is active.</li>
+  <code>state</code>, <code>message</code>: Estimated information about the current print when a
+  virtual_sdcard print is active.</li>
+<li><code>info.total_layer</code>: The total layer value of the last <code>SET_PRINT_STATS_INFO
+   TOTAL_LAYER=&lt;value&gt;</code> G-Code command.</li>
+<li><code>info.current_layer</code>: The current layer value of the last
+  <code>SET_PRINT_STATS_INFO CURRENT_LAYER=&lt;value&gt;</code> G-Code command.</li>
 </ul>
 <h2 id="probe">probe<a class="headerlink" href="#probe" title="Permanent link">&para;</a></h2>
 <p>The following information is available in the
@@ -2159,12 +2254,39 @@ is defined):</p>
   the QUERY_ENDSTOP command must be run prior to the macro containing
   this reference.</li>
 </ul>
+<h2 id="screws_tilt_adjust">screws_tilt_adjust<a class="headerlink" href="#screws_tilt_adjust" title="Permanent link">&para;</a></h2>
+<p>The following information is available in the <code>screws_tilt_adjust</code>
+object:</p>
+<ul>
+<li><code>error</code>: Returns True if the most recent <code>SCREWS_TILT_CALCULATE</code>
+  command included the <code>MAX_DEVIATION</code> parameter and any of the probed
+  screw points exceeded the specified <code>MAX_DEVIATION</code>.</li>
+<li><code>results["&lt;screw&gt;"]</code>: A dictionary containing the following keys:<ul>
+<li><code>z</code>: The measured Z height of the screw location.</li>
+<li><code>sign</code>: A string specifying the direction to turn to screw for the
+  necessary adjustment. Either "CW" for clockwise or "CCW" for
+  counterclockwise.</li>
+<li><code>adjust</code>: The number of screw turns to adjust the screw, given in
+  the format "HH:MM," where "HH" is the number of full screw turns
+  and "MM" is the number of "minutes of a clock face" representing
+  a partial screw turn. (E.g. "01:15" would mean to turn the screw
+  one and a quarter revolutions.)</li>
+<li><code>is_base</code>: Returns True if this is the base screw.</li>
+</ul>
+</li>
+</ul>
 <h2 id="servo">servo<a class="headerlink" href="#servo" title="Permanent link">&para;</a></h2>
 <p>The following information is available in
 <a href="Config_Reference.html#servo">servo some_name</a> objects:</p>
 <ul>
 <li><code>printer["servo &lt;config_name&gt;"].value</code>: The last setting of the PWM
   pin (a value between 0.0 and 1.0) associated with the servo.</li>
+</ul>
+<h2 id="stepper_enable">stepper_enable<a class="headerlink" href="#stepper_enable" title="Permanent link">&para;</a></h2>
+<p>The following information is available in the <code>stepper_enable</code> object (this
+object is available if any stepper is defined):</p>
+<ul>
+<li><code>steppers["&lt;stepper&gt;"]</code>: Returns True if the given stepper is enabled.</li>
 </ul>
 <h2 id="system_stats">system_stats<a class="headerlink" href="#system_stats" title="Permanent link">&para;</a></h2>
 <p>The following information is available in the <code>system_stats</code> object
@@ -2238,6 +2360,8 @@ objects (eg, <code>[tmc2208 stepper_x]</code>):</p>
 <li><code>axis_minimum</code>, <code>axis_maximum</code>: The axis travel limits (mm) after
   homing.  It is possible to access the x, y, z components of this
   limit value (eg, <code>axis_minimum.x</code>, <code>axis_maximum.z</code>).</li>
+<li>For Delta printers the <code>cone_start_z</code> is the max z height at
+  maximum radius (<code>printer.toolhead.cone_start_z</code>).</li>
 <li><code>max_velocity</code>, <code>max_accel</code>, <code>max_accel_to_decel</code>,
   <code>square_corner_velocity</code>: The current printing limits that are in
   effect. This may differ from the config file settings if a
@@ -2274,6 +2398,19 @@ object is always available):</p>
   state. Possible values are: "ready", "startup", "shutdown", "error".</li>
 <li><code>state_message</code>: A human readable string giving additional context
   on the current Klipper state.</li>
+</ul>
+<h2 id="z_thermal_adjust">z_thermal_adjust<a class="headerlink" href="#z_thermal_adjust" title="Permanent link">&para;</a></h2>
+<p>The following information is available in the <code>z_thermal_adjust</code> object (this
+object is available if <a href="Config_Reference.html#z_thermal_adjust">z_thermal_adjust</a>
+is defined).</p>
+<ul>
+<li><code>enabled</code>: Returns True if adjustment is enabled.</li>
+<li><code>temperature</code>: Current (smoothed) temperature of the defined sensor. [degC]</li>
+<li><code>measured_min_temp</code>: Minimum measured temperature. [degC]</li>
+<li><code>measured_max_temp</code>: Maximum measured temperature. [degC]</li>
+<li><code>current_z_adjust</code>: Last computed Z adjustment [mm].</li>
+<li><code>z_adjust_ref_temperature</code>: Current reference temperature used for calculation
+  of Z <code>current_z_adjust</code> [degC].</li>
 </ul>
 <h2 id="z_tilt">z_tilt<a class="headerlink" href="#z_tilt" title="Permanent link">&para;</a></h2>
 <p>The following information is available in the <code>z_tilt</code> object (this
