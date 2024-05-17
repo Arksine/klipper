@@ -1579,6 +1579,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Eddy_Probe.html" class="md-nav__link">
+        Eddy Current Inductive probe
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2411,6 +2425,7 @@ object is available if any stepper is defined):</p>
 <p>The following information is available in</p>
 <p><a href="Config_Reference.html#bmp280bme280bme680-temperature-sensor">bme280 config_section_name</a>,
 <a href="Config_Reference.html#htu21d-sensor">htu21d config_section_name</a>,
+<a href="Config_Reference.html#sht31-sensor">sht3x config_section_name</a>,
 <a href="Config_Reference.html#lm75-temperature-sensor">lm75 config_section_name</a>,
 <a href="Config_Reference.html#host-temperature-sensor">temperature_host config_section_name</a>
 and
@@ -2419,7 +2434,7 @@ objects:</p>
 <ul>
 <li><code>temperature</code>: The last read temperature from the sensor.</li>
 <li><code>humidity</code>, <code>pressure</code>, <code>gas</code>: The last read values from the sensor
-  (only on bme280, htu21d, and lm75 sensors).</li>
+  (only on bme280, htu21d, sht3x and lm75 sensors).</li>
 </ul>
 <h2 id="temperature_fan">temperature_fan<a class="headerlink" href="#temperature_fan" title="Permanent link">&para;</a></h2>
 <p>The following information is available in
@@ -2478,7 +2493,7 @@ objects (eg, <code>[tmc2208 stepper_x]</code>):</p>
   limit value (eg, <code>axis_minimum.x</code>, <code>axis_maximum.z</code>).</li>
 <li>For Delta printers the <code>cone_start_z</code> is the max z height at
   maximum radius (<code>printer.toolhead.cone_start_z</code>).</li>
-<li><code>max_velocity</code>, <code>max_accel</code>, <code>max_accel_to_decel</code>,
+<li><code>max_velocity</code>, <code>max_accel</code>, <code>minimum_cruise_ratio</code>,
   <code>square_corner_velocity</code>: The current printing limits that are in
   effect. This may differ from the config file settings if a
   <code>SET_VELOCITY_LIMIT</code> (or <code>M204</code>) command alters them at run-time.</li>

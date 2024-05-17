@@ -976,6 +976,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#probe_eddy_current" class="md-nav__link">
+    [probe_eddy_current]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#axis_twist_compensation" class="md-nav__link">
     [axis_twist_compensation]
   </a>
@@ -1127,8 +1134,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bmp180bmp280bme280bme680-temperature-sensor" class="md-nav__link">
-    BMP180/BMP280/BME280/BME680 temperature sensor
+  <a href="#bmp180bmp280bme280bmp388bme680-temperature-sensor" class="md-nav__link">
+    BMP180/BMP280/BME280/BMP388/BME680 temperature sensor
   </a>
   
 </li>
@@ -1143,6 +1150,13 @@
           <li class="md-nav__item">
   <a href="#htu21d-sensor" class="md-nav__link">
     HTU21D sensor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sht3x-sensor" class="md-nav__link">
+    SHT3X sensor
   </a>
   
 </li>
@@ -2451,6 +2465,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Eddy_Probe.html" class="md-nav__link">
+        Eddy Current Inductive probe
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2988,6 +3016,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#probe_eddy_current" class="md-nav__link">
+    [probe_eddy_current]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#axis_twist_compensation" class="md-nav__link">
     [axis_twist_compensation]
   </a>
@@ -3139,8 +3174,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#bmp180bmp280bme280bme680-temperature-sensor" class="md-nav__link">
-    BMP180/BMP280/BME280/BME680 temperature sensor
+  <a href="#bmp180bmp280bme280bmp388bme680-temperature-sensor" class="md-nav__link">
+    BMP180/BMP280/BME280/BMP388/BME680 temperature sensor
   </a>
   
 </li>
@@ -3155,6 +3190,13 @@
           <li class="md-nav__item">
   <a href="#htu21d-sensor" class="md-nav__link">
     HTU21D sensor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sht3x-sensor" class="md-nav__link">
+    SHT3X sensor
   </a>
   
 </li>
@@ -3789,13 +3831,22 @@ max_accel:
 #   will do so at the rate specified here. The value specified here
 #   may be changed at runtime using the SET_VELOCITY_LIMIT command.
 #   This parameter must be specified.
-#max_accel_to_decel:
-#   A pseudo acceleration (in mm/s^2) controlling how fast the
-#   toolhead may go from acceleration to deceleration. It is used to
-#   reduce the top speed of short zig-zag moves (and thus reduce
-#   printer vibration from these moves). The value specified here may
-#   be changed at runtime using the SET_VELOCITY_LIMIT command. The
-#   default is half of max_accel.
+#minimum_cruise_ratio: 0.5
+#   Most moves will accelerate to a cruising speed, travel at that
+#   cruising speed, and then decelerate. However, some moves that
+#   travel a short distance could nominally accelerate and then
+#   immediately decelerate. This option reduces the top speed of these
+#   moves to ensure there is always a minimum distance traveled at a
+#   cruising speed. That is, it enforces a minimum distance traveled
+#   at cruising speed relative to the total distance traveled. It is
+#   intended to reduce the top speed of short zigzag moves (and thus
+#   reduce printer vibration from these moves). For example, a
+#   minimum_cruise_ratio of 0.5 would ensure that a standalone 1.5mm
+#   move would have a minimum cruising distance of 0.75mm. Specify a
+#   ratio of 0.0 to disable this feature (there would be no minimum
+#   cruising distance enforced between acceleration and deceleration).
+#   The value specified here may be changed at runtime using the
+#   SET_VELOCITY_LIMIT command. The default is 0.5.
 #square_corner_velocity: 5.0
 #   The maximum velocity (in mm/s) that the toolhead may travel a 90
 #   degree corner at. A non-zero value can reduce changes in extruder
@@ -3808,6 +3859,8 @@ max_accel:
 #   decelerate to zero at each corner. The value specified here may be
 #   changed at runtime using the SET_VELOCITY_LIMIT command. The
 #   default is 5mm/s.
+#max_accel_to_decel:
+#   This parameter is deprecated and should no longer be used.
 </code></pre></div>
 
 <h3 id="stepper">[stepper]<a class="headerlink" href="#stepper" title="Permanent link">&para;</a></h3>
@@ -4606,13 +4659,6 @@ toward the center of the print area.</p>
 #   where Z = 0.  When this option is specified the mesh will be offset
 #   so that zero Z adjustment occurs at this location.  The default is
 #   no zero reference.
-#relative_reference_index:
-#   **DEPRECATED, use the &quot;zero_reference_position&quot; option**
-#   The legacy option superceded by the &quot;zero reference position&quot;.
-#   Rather than a coordinate this option takes an integer &quot;index&quot; that
-#   refers to the location of one of the generated points. It is recommended
-#   to use the &quot;zero_reference_position&quot; instead of this option for new
-#   configurations. The default is no relative reference index.
 #faulty_region_1_min:
 #faulty_region_1_max:
 #   Optional points that define a faulty region.  See docs/Bed_Mesh.md
@@ -5042,6 +5088,8 @@ path:
 #   be provided.
 #on_error_gcode:
 #   A list of G-Code commands to execute when an error is reported.
+#   See docs/Command_Templates.md for G-Code format. The default is to
+#   run TURN_OFF_HEATERS.
 </code></pre></div>
 
 <h3 id="sdcard_loop">[sdcard_loop]<a class="headerlink" href="#sdcard_loop" title="Permanent link">&para;</a></h3>
@@ -5506,6 +5554,37 @@ z_offset:
 #   See the &quot;probe&quot; section for more information on the parameters above.
 </code></pre></div>
 
+<h3 id="probe_eddy_current">[probe_eddy_current]<a class="headerlink" href="#probe_eddy_current" title="Permanent link">&para;</a></h3>
+<p>Support for eddy current inductive probes. One may define this section
+(instead of a probe section) to enable this probe. See the
+<a href="G-Codes.html#probe_eddy_current">command reference</a> for further information.</p>
+<div class="highlight"><pre><span></span><code>[probe_eddy_current my_eddy_probe]
+sensor_type: ldc1612
+#   The sensor chip used to perform eddy current measurements. This
+#   parameter must be provided and must be set to ldc1612.
+#z_offset:
+#   The nominal distance (in mm) between the nozzle and bed that a
+#   probing attempt should stop at. This parameter must be provided.
+#i2c_address:
+#i2c_mcu:
+#i2c_bus:
+#i2c_software_scl_pin:
+#i2c_software_sda_pin:
+#i2c_speed:
+#   The i2c settings for the sensor chip. See the &quot;common I2C
+#   settings&quot; section for a description of the above parameters.
+#x_offset:
+#y_offset:
+#speed:
+#lift_speed:
+#samples:
+#sample_retract_dist:
+#samples_result:
+#samples_tolerance:
+#samples_tolerance_retries:
+#   See the &quot;probe&quot; section for information on these parameters.
+</code></pre></div>
+
 <h3 id="axis_twist_compensation">[axis_twist_compensation]<a class="headerlink" href="#axis_twist_compensation" title="Permanent link">&para;</a></h3>
 <p>A tool to compensate for inaccurate probe readings due to twist in X gantry. See
 the <a href="Axis_Twist_Compensation.html">Axis Twist Compensation Guide</a> for more
@@ -5910,8 +5989,8 @@ sensor_pin:
 #   name in the above list.
 </code></pre></div>
 
-<h3 id="bmp180bmp280bme280bme680-temperature-sensor">BMP180/BMP280/BME280/BME680 temperature sensor<a class="headerlink" href="#bmp180bmp280bme280bme680-temperature-sensor" title="Permanent link">&para;</a></h3>
-<p>BMP180/BMP280/BME280/BME680 two wire interface (I2C) environmental sensors.
+<h3 id="bmp180bmp280bme280bmp388bme680-temperature-sensor">BMP180/BMP280/BME280/BMP388/BME680 temperature sensor<a class="headerlink" href="#bmp180bmp280bme280bmp388bme680-temperature-sensor" title="Permanent link">&para;</a></h3>
+<p>BMP180/BMP280/BME280/BMP388/BME680 two wire interface (I2C) environmental sensors.
 Note that these sensors are not intended for use with extruders and
 heater beds, but rather for monitoring ambient temperature (C),
 pressure (hPa), relative humidity and in case of the BME680 gas level.
@@ -5920,8 +5999,8 @@ that may be used to report pressure and humidity in addition to
 temperature.</p>
 <div class="highlight"><pre><span></span><code>sensor_type: BME280
 #i2c_address:
-#   Default is 118 (0x76). The BMP180 and some BME280 sensors have an address of 119
-#   (0x77).
+#   Default is 118 (0x76). The BMP180, BMP388 and some BME280 sensors
+#   have an address of 119 (0x77).
 #i2c_mcu:
 #i2c_bus:
 #i2c_software_scl_pin:
@@ -5984,6 +6063,22 @@ temperature.</p>
 #   Default is: &quot;TEMP11_HUM11&quot;
 #htu21d_report_time:
 #   Interval in seconds between readings. Default is 30
+</code></pre></div>
+
+<h3 id="sht3x-sensor">SHT3X sensor<a class="headerlink" href="#sht3x-sensor" title="Permanent link">&para;</a></h3>
+<p>SHT3X family two wire interface (I2C) environmental sensor. These sensors
+have a range of -55~125 C, so are usable for e.g. chamber temperature
+monitoring. They can also function as simple fan/heater controllers.</p>
+<div class="highlight"><pre><span></span><code>sensor_type: SHT3X
+#i2c_address:
+#   Default is 68 (0x44).
+#i2c_mcu:
+#i2c_bus:
+#i2c_software_scl_pin:
+#i2c_software_sda_pin:
+#i2c_speed:
+#   See the &quot;common I2C settings&quot; section for a description of the
+#   above parameters.
 </code></pre></div>
 
 <h3 id="lm75-temperature-sensor">LM75 temperature sensor<a class="headerlink" href="#lm75-temperature-sensor" title="Permanent link">&para;</a></h3>
@@ -6633,6 +6728,21 @@ run_current:
 #   set, &quot;stealthChop&quot; mode will be enabled if the stepper motor
 #   velocity is below this value. The default is 0, which disables
 #   &quot;stealthChop&quot; mode.
+#coolstep_threshold:
+#   The velocity (in mm/s) to set the TMC driver internal &quot;CoolStep&quot;
+#   threshold to. If set, the coolstep feature will be enabled when
+#   the stepper motor velocity is near or above this value. Important
+#   - if coolstep_threshold is set and &quot;sensorless homing&quot; is used,
+#   then one must ensure that the homing speed is above the coolstep
+#   threshold! The default is to not enable the coolstep feature.
+#high_velocity_threshold:
+#   The velocity (in mm/s) to set the TMC driver internal &quot;high
+#   velocity&quot; threshold (THIGH) to. This is typically used to disable
+#   the &quot;CoolStep&quot; feature at high speeds. Important - if
+#   high_velocity_threshold is set and &quot;sensorless homing&quot; is used,
+#   then one must ensure that the homing speed is below the high
+#   velocity threshold! The default is to not set a TMC &quot;high
+#   velocity&quot; threshold.
 #driver_MSLUT0: 2863314260
 #driver_MSLUT1: 1251300522
 #driver_MSLUT2: 608774441
@@ -6663,11 +6773,19 @@ run_current:
 #driver_TOFF: 4
 #driver_HEND: 7
 #driver_HSTRT: 0
+#driver_VHIGHFS: 0
+#driver_VHIGHCHM: 0
 #driver_PWM_AUTOSCALE: True
 #driver_PWM_FREQ: 1
 #driver_PWM_GRAD: 4
 #driver_PWM_AMPL: 128
 #driver_SGT: 0
+#driver_SEMIN: 0
+#driver_SEUP: 0
+#driver_SEMAX: 0
+#driver_SEDN: 0
+#driver_SEIMIN: 0
+#driver_SFILT: 0
 #   Set the given register during the configuration of the TMC2130
 #   chip. This may be used to set custom motor parameters. The
 #   defaults for each parameter are next to the parameter name in the
@@ -6758,6 +6876,13 @@ run_current:
 #sense_resistor: 0.110
 #stealthchop_threshold: 0
 #   See the &quot;tmc2208&quot; section for the definition of these parameters.
+#coolstep_threshold:
+#   The velocity (in mm/s) to set the TMC driver internal &quot;CoolStep&quot;
+#   threshold to. If set, the coolstep feature will be enabled when
+#   the stepper motor velocity is near or above this value. Important
+#   - if coolstep_threshold is set and &quot;sensorless homing&quot; is used,
+#   then one must ensure that the homing speed is above the coolstep
+#   threshold! The default is to not enable the coolstep feature.
 #uart_address:
 #   The address of the TMC2209 chip for UART messages (an integer
 #   between 0 and 3). This is typically used when multiple TMC2209
@@ -6777,6 +6902,11 @@ run_current:
 #driver_PWM_GRAD: 14
 #driver_PWM_OFS: 36
 #driver_SGTHRS: 0
+#driver_SEMIN: 0
+#driver_SEUP: 0
+#driver_SEMAX: 0
+#driver_SEDN: 0
+#driver_SEIMIN: 0
 #   Set the given register during the configuration of the TMC2209
 #   chip. This may be used to set custom motor parameters. The
 #   defaults for each parameter are next to the parameter name in the
@@ -6905,6 +7035,21 @@ run_current:
 #   set, &quot;stealthChop&quot; mode will be enabled if the stepper motor
 #   velocity is below this value. The default is 0, which disables
 #   &quot;stealthChop&quot; mode.
+#coolstep_threshold:
+#   The velocity (in mm/s) to set the TMC driver internal &quot;CoolStep&quot;
+#   threshold to. If set, the coolstep feature will be enabled when
+#   the stepper motor velocity is near or above this value. Important
+#   - if coolstep_threshold is set and &quot;sensorless homing&quot; is used,
+#   then one must ensure that the homing speed is above the coolstep
+#   threshold! The default is to not enable the coolstep feature.
+#high_velocity_threshold:
+#   The velocity (in mm/s) to set the TMC driver internal &quot;high
+#   velocity&quot; threshold (THIGH) to. This is typically used to disable
+#   the &quot;CoolStep&quot; feature at high speeds. Important - if
+#   high_velocity_threshold is set and &quot;sensorless homing&quot; is used,
+#   then one must ensure that the homing speed is below the high
+#   velocity threshold! The default is to not set a TMC &quot;high
+#   velocity&quot; threshold.
 #driver_MSLUT0: 2863314260
 #driver_MSLUT1: 1251300522
 #driver_MSLUT2: 608774441
@@ -7023,6 +7168,21 @@ run_current:
 #   set, &quot;stealthChop&quot; mode will be enabled if the stepper motor
 #   velocity is below this value. The default is 0, which disables
 #   &quot;stealthChop&quot; mode.
+#coolstep_threshold:
+#   The velocity (in mm/s) to set the TMC driver internal &quot;CoolStep&quot;
+#   threshold to. If set, the coolstep feature will be enabled when
+#   the stepper motor velocity is near or above this value. Important
+#   - if coolstep_threshold is set and &quot;sensorless homing&quot; is used,
+#   then one must ensure that the homing speed is above the coolstep
+#   threshold! The default is to not enable the coolstep feature.
+#high_velocity_threshold:
+#   The velocity (in mm/s) to set the TMC driver internal &quot;high
+#   velocity&quot; threshold (THIGH) to. This is typically used to disable
+#   the &quot;CoolStep&quot; feature at high speeds. Important - if
+#   high_velocity_threshold is set and &quot;sensorless homing&quot; is used,
+#   then one must ensure that the homing speed is below the high
+#   velocity threshold! The default is to not set a TMC &quot;high
+#   velocity&quot; threshold.
 #driver_MSLUT0: 2863314260
 #driver_MSLUT1: 1251300522
 #driver_MSLUT2: 608774441
