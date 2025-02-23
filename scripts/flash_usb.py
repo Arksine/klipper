@@ -65,7 +65,7 @@ def get_device_ids(devpath):
         pass
     return manufacturer, dev_id
 
-CANBOOT_ID = "1d50:6177"
+KATAPULT_ID = "1d50:6177"
 KLIPPER_ID = "1d50:614e"
 
 # Wait for a given path to appear
@@ -95,11 +95,11 @@ def wait_path(path, alt_path=None):
         if cur_time > end_time:
             return path
 
-def detect_canboot(devpath):
+def detect_katapult(devpath):
     _, usbid = get_device_ids(devpath)
-    return usbid == CANBOOT_ID
+    return usbid == KATAPULT_ID
 
-def call_flashcan(device, binfile):
+def call_flashtool(device, binfile):
     try:
         import serial
     except ModuleNotFoundError:
@@ -109,17 +109,17 @@ def call_flashcan(device, binfile):
             "   %s -m pip install pyserial\n\n" % (sys.executable,)
         )
         sys.exit(-1)
-    args = [sys.executable, "lib/canboot/flash_can.py", "-d",
+    args = [sys.executable, "lib/katapult/flashtool.py", "-d",
             device, "-f", binfile]
     sys.stderr.write(" ".join(args) + '\n\n')
     res = subprocess.call(args)
     if res != 0:
-        sys.stderr.write("Error running flash_can.py\n")
+        sys.stderr.write("Error running flashtool.py\n")
         sys.exit(-1)
 
-def flash_canboot(options, binfile):
+def flash_katapult(options, binfile):
     ttyname, pathname = translate_serial_to_tty(options.device)
-    call_flashcan(pathname, binfile)
+    call_flashtool(pathname, binfile)
 
 # Flash via a call to bossac
 def flash_bossac(device, binfile, extra_flags=[]):
@@ -162,8 +162,8 @@ def flash_dfuutil(device, binfile, extra_flags=[], sudo=True):
     buspath, devpath = translate_serial_to_usb_path(device)
     enter_bootloader(device)
     pathname = wait_path(devpath)
-    if detect_canboot(devpath):
-        call_flashcan(serbypath, binfile)
+    if detect_katapult(devpath):
+        call_flashtool(serbypath, binfile)
     else:
         call_dfuutil(["-p", buspath] + extra_flags, binfile, sudo)
 
@@ -186,8 +186,8 @@ def flash_hidflash(device, binfile, sudo=True):
     buspath, devpath = translate_serial_to_usb_path(device)
     enter_bootloader(device)
     pathname = wait_path(devpath)
-    if detect_canboot(devpath):
-        call_flashcan(serbypath, binfile)
+    if detect_katapult(devpath):
+        call_flashtool(serbypath, binfile)
     else:
         call_hidflash(binfile, sudo)
 
@@ -215,8 +215,8 @@ def flash_picoboot(device, binfile, sudo):
         bus = f.read().strip()
     with open(usbdir + "/devnum") as f:
         addr = f.read().strip()
-    if detect_canboot(devpath):
-        call_flashcan(serbypath, binfile)
+    if detect_katapult(devpath):
+        call_flashtool(serbypath, binfile)
     else:
         call_picoboot(bus, addr, binfile, sudo)
 
