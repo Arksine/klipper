@@ -50,6 +50,24 @@ def translate_serial_to_usb_path(device):
     devpath = os.path.realpath("/sys/class/tty/%s/device" % (fname,))
     return m.group("path"), devpath
 
+def get_device_ids(devpath):
+    usbdir = os.path.dirname(devpath)
+    manufacturer = dev_id = ""
+    try:
+        with open(os.path.join(usbdir, "manufacturer")) as f:
+            manufacturer = f.read().strip().lower()
+        with open(os.path.join(usbdir, "idVendor")) as f:
+            vid = f.read().strip().lower()
+        with open(os.path.join(usbdir, "idProduct")) as f:
+            pid = f.read().strip().lower()
+        dev_id = "%s:%s" % (vid, pid)
+    except Exception:
+        pass
+    return manufacturer, dev_id
+
+CANBOOT_ID = "1d50:6177"
+KLIPPER_ID = "1d50:614e"
+
 # Wait for a given path to appear
 def wait_path(path, alt_path=None):
     time.sleep(.100)
@@ -59,6 +77,10 @@ def wait_path(path, alt_path=None):
         time.sleep(0.100)
         cur_time = time.time()
         if os.path.exists(path):
+            manufacturer, dev_id = get_device_ids(path)
+            if manufacturer == "klipper" or dev_id == KLIPPER_ID:
+                # Device still showing klipper
+                continue
             sys.stderr.write("Device reconnect on %s\n" % (path,))
             time.sleep(0.100)
             return path
@@ -73,18 +95,8 @@ def wait_path(path, alt_path=None):
         if cur_time > end_time:
             return path
 
-CANBOOT_ID ="1d50:6177"
-
 def detect_canboot(devpath):
-    usbdir = os.path.dirname(devpath)
-    try:
-        with open(os.path.join(usbdir, "idVendor")) as f:
-            vid = f.read().strip().lower()
-        with open(os.path.join(usbdir, "idProduct")) as f:
-            pid = f.read().strip().lower()
-    except Exception:
-        return False
-    usbid = "%s:%s" % (vid, pid)
+    _, usbid = get_device_ids(devpath)
     return usbid == CANBOOT_ID
 
 def call_flashcan(device, binfile):
