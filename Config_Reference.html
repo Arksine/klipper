@@ -660,6 +660,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#generic-cartesian-kinematics" class="md-nav__link">
+    Generic Cartesian Kinematics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#none-kinematics" class="md-nav__link">
     None Kinematics
   </a>
@@ -934,8 +941,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#icm20948" class="md-nav__link">
+    [icm20948]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#lis2dw" class="md-nav__link">
     [lis2dw]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lis3dh" class="md-nav__link">
+    [lis3dh]
   </a>
   
 </li>
@@ -1540,6 +1561,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#aip31068_spi-display" class="md-nav__link">
+    aip31068_spi display
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#st7920-display" class="md-nav__link">
     st7920 display
   </a>
@@ -1670,8 +1698,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#xh711" class="md-nav__link">
-    XH711
+  <a href="#hx711" class="md-nav__link">
+    HX711
   </a>
   
 </li>
@@ -1692,6 +1720,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load_cell_probe" class="md-nav__link">
+    [load_cell_probe]
+  </a>
   
 </li>
         
@@ -1725,6 +1760,13 @@
           <li class="md-nav__item">
   <a href="#adc_scaled" class="md-nav__link">
     [adc_scaled]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ads1x1x" class="md-nav__link">
+    [ads1x1x]
   </a>
   
 </li>
@@ -2580,6 +2622,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Load_Cell.html" class="md-nav__link">
+        Load Cells
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2749,6 +2805,13 @@
           <li class="md-nav__item">
   <a href="#cable-winch-kinematics" class="md-nav__link">
     Cable winch Kinematics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic-cartesian-kinematics" class="md-nav__link">
+    Generic Cartesian Kinematics
   </a>
   
 </li>
@@ -3028,8 +3091,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#icm20948" class="md-nav__link">
+    [icm20948]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#lis2dw" class="md-nav__link">
     [lis2dw]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lis3dh" class="md-nav__link">
+    [lis3dh]
   </a>
   
 </li>
@@ -3634,6 +3711,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#aip31068_spi-display" class="md-nav__link">
+    aip31068_spi display
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#st7920-display" class="md-nav__link">
     st7920 display
   </a>
@@ -3764,8 +3848,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#xh711" class="md-nav__link">
-    XH711
+  <a href="#hx711" class="md-nav__link">
+    HX711
   </a>
   
 </li>
@@ -3786,6 +3870,13 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load_cell_probe" class="md-nav__link">
+    [load_cell_probe]
+  </a>
   
 </li>
         
@@ -3819,6 +3910,13 @@
           <li class="md-nav__item">
   <a href="#adc_scaled" class="md-nav__link">
     [adc_scaled]
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ads1x1x" class="md-nav__link">
+    [ads1x1x]
   </a>
   
 </li>
@@ -3973,8 +4071,9 @@ pins such as "extra_mcu:ar9" may then be used elsewhere in the config
 <div class="highlight"><pre><span></span><code>[printer]
 kinematics:
 #   The type of printer in use. This option may be one of: cartesian,
-#   corexy, corexz, hybrid_corexy, hybrid_corexz, rotary_delta, delta,
-#   deltesian, polar, winch, or none. This parameter must be specified.
+#   corexy, corexz, hybrid_corexy, hybrid_corexz, generic_cartesian,
+#   rotary_delta, delta, deltesian, polar, winch, or none.
+#   This parameter must be specified.
 max_velocity:
 #   Maximum velocity (in mm/s) of the toolhead (relative to the
 #   print). This value may be changed at runtime using the
@@ -4014,8 +4113,6 @@ max_accel:
 #   decelerate to zero at each corner. The value specified here may be
 #   changed at runtime using the SET_VELOCITY_LIMIT command. The
 #   default is 5mm/s.
-#max_accel_to_decel:
-#   This parameter is deprecated and should no longer be used.
 </code></pre></div>
 
 <h3 id="stepper">[stepper]<a class="headerlink" href="#stepper" title="Permanent link">&para;</a></h3>
@@ -4552,6 +4649,159 @@ anchor_z:
 #   These parameters must be provided.
 </code></pre></div>
 
+<h3 id="generic-cartesian-kinematics">Generic Cartesian Kinematics<a class="headerlink" href="#generic-cartesian-kinematics" title="Permanent link">&para;</a></h3>
+<p>See <a href="https://github.com/Klipper3d/klipper/blob/master/config/example-generic-caretesian.cfg">example-generic-cartesian.cfg</a>
+for an example generic Cartesian kinematics config file.</p>
+<p>This printer kinematic class allows a user to define in a pretty flexible
+manner an arbitrary Cartesian-style kinematics. In principle, the regular
+cartesian, corexy, hybrid_corexy can be defined this way too. However,
+more importantly, various otherwise unsupported kinematics such as
+inverted hybrid_corexy or corexyuv can be defined using this kinematic.</p>
+<p>Notably, the definition of a generic Cartesian kinematic deviates
+significantly from the other kinematic types. It follows the following
+convention: a user defines a set of carriages with certain range of motion
+that can move independently from each other (they should move over the
+Cartesian axes X, Y, and Z, hence the name of the kinematic) and
+corresponding endstops that allow the firmware to determine the position
+of carriages during homing, as well as a set of steppers that move those
+carriages. The <code>[printer]</code> section must specify the kinematic and
+other printer-level settings same as the regular Cartesian kinematic:</p>
+<div class="highlight"><pre><span></span><code>[printer]
+kinematics: generic_cartesian
+max_velocity:
+max_accel:
+#minimum_cruise_ratio:
+#square_corner_velocity:
+#max_z_velocity:
+#max_z_accel:
+</code></pre></div>
+
+<p>Then a user must define the following three carriages: <code>[carriage x]</code>,
+<code>[carriage y]</code>, and <code>[carriage z]</code>, e.g.</p>
+<div class="highlight"><pre><span></span><code>[carriage x]
+endstop_pin:
+#   Endstop switch detection pin. If this endstop pin is on a
+#   different mcu than the stepper motor(s) moving this carriage,
+#   then it enables &quot;multi-mcu homing&quot;. This parameter must be provided.
+#position_min: 0
+#   Minimum valid distance (in mm) the user may command the carriage to
+#   move to.  The default is 0mm.
+position_endstop:
+#   Location of the endstop (in mm). This parameter must be provided.
+position_max:
+#   Maximum valid distance (in mm) the user may command the stepper to
+#   move to. This parameter must be provided.
+#homing_speed: 5.0
+#   Maximum velocity (in mm/s) of the carriage when homing. The default
+#   is 5mm/s.
+#homing_retract_dist: 5.0
+#   Distance to backoff (in mm) before homing a second time during
+#   homing. Set this to zero to disable the second home. The default
+#   is 5mm.
+#homing_retract_speed:
+#   Speed to use on the retract move after homing in case this should
+#   be different from the homing speed, which is the default for this
+#   parameter
+#second_homing_speed:
+#   Velocity (in mm/s) of the carriage when performing the second home.
+#   The default is homing_speed/2.
+#homing_positive_dir:
+#   If true, homing will cause the carriage to move in a positive
+#   direction (away from zero); if false, home towards zero. It is
+#   better to use the default than to specify this parameter. The
+#   default is true if position_endstop is near position_max and false
+#   if near position_min.
+</code></pre></div>
+
+<p>Afterwards, a user specifies the stepper motors that move these carriages,
+for instance</p>
+<div class="highlight"><pre><span></span><code>[stepper my_stepper]
+carriages:
+#   A string describing the carriages the stepper moves. All defined
+#   carriages can be specified here, as well as their linear combinations,
+#   e.g. x, x+y, y-0.5*z, x-z, etc. This parameter must be provided.
+step_pin:
+dir_pin:
+enable_pin:
+rotation_distance:
+microsteps:
+#full_steps_per_rotation: 200
+#gear_ratio:
+#step_pulse_duration:
+</code></pre></div>
+
+<p>See <a href="#stepper">stepper</a> section for more information on the regular
+stepper parameters. The <code>carriages</code> parameter defines how the stepper
+affects the motion of the carriages. For example, <code>x+y</code> indicates that
+the motion of the stepper in the positive direction by the distance <code>d</code>
+moves the carriages <code>x</code> and <code>y</code> by the same distance <code>d</code> in the positive
+direction, while <code>x-0.5*y</code> means the motion of the stepper in the positive
+direction by the distance <code>d</code> moves the carriage <code>x</code> by the distance <code>d</code>
+in the positive direction, but the carriage <code>y</code> will travel distance <code>d/2</code>
+in the negative direction.</p>
+<p>More than a single stepper motor can be defined to drive the same axis
+or belt. For example, on a CoreXY AWD setups two motors driving the same
+belt can be defined as</p>
+<div class="highlight"><pre><span></span><code>[carriage x]
+endstop_pin: ...
+...
+
+[carriage y]
+endstop_pin: ...
+...
+
+[stepper a0]
+carriages: x-y
+step_pin: ...
+dir_pin: ...
+enable_pin: ...
+rotation_distance: ...
+...
+
+[stepper a1]
+carriages: x-y
+step_pin: ...
+dir_pin: ...
+enable_pin: ...
+rotation_distance: ...
+...
+</code></pre></div>
+
+<p>with <code>a0</code> and <code>a1</code> steppers having their own control pins, but
+sharing the same <code>carriages</code> and corresponding endstops.</p>
+<p>There are situations when a user wants to have more than one endstop
+per axis. Examples of such configurations include Y axis driven by
+two independent stepper motors with belts attached to both ends of the
+X beam, with effectively two carriages on Y axis each having an
+independent endstop, and multi-stepper Z axis with each stepper having
+its own endstop (not to be confused with the configurations with
+multiple Z motors but only a single endstop). These configurations
+can be declared by specifying additional carriage(s) with their endstops:</p>
+<div class="highlight"><pre><span></span><code>[extra_carriage my_carriage]
+primary_carriage:
+#   The name of the primary carriage this carriage corresponds to.
+#   It also effectively defines the axis the carriage moves over.
+#   This parameter must be provided.
+endstop_pin:
+#   Endstop switch detection pin. This parameter must be provided.
+</code></pre></div>
+
+<p>and the corresponding stepper motors, for example:</p>
+<div class="highlight"><pre><span></span><code>[extra_carriage y1]
+primary_carriage: y
+endstop_pin: ...
+
+[stepper sy1]
+carriages: y1
+...
+</code></pre></div>
+
+<p>Notably, an <code>[extra_carriage]</code> does not define parameters such as
+<code>position_min</code>, <code>position_max</code>, and <code>position_endstop</code>, but instead
+inherits them from the specified <code>primary_carriage</code>, thus sharing
+the same range of motion with the primary carriage.</p>
+<p>For the references on how to configure IDEX setups, see the
+<a href="#dual-carriage">dual carriage</a> section.</p>
 <h3 id="none-kinematics">None Kinematics<a class="headerlink" href="#none-kinematics" title="Permanent link">&para;</a></h3>
 <p>It is possible to define a special "none" kinematics to disable
 kinematic support in Klipper. This may be useful for controlling
@@ -5411,11 +5661,28 @@ cs_pin:
 #   measurements.
 </code></pre></div>
 
+<h3 id="icm20948">[icm20948]<a class="headerlink" href="#icm20948" title="Permanent link">&para;</a></h3>
+<p>Support for icm20948 accelerometers.</p>
+<div class="highlight"><pre><span></span><code>[icm20948]
+#i2c_address:
+#   Default is 104 (0x68). If AD0 is high, it would be 0x69 instead.
+#i2c_mcu:
+#i2c_bus:
+#i2c_software_scl_pin:
+#i2c_software_sda_pin:
+#i2c_speed: 400000
+#   See the &quot;common I2C settings&quot; section for a description of the
+#   above parameters. The default &quot;i2c_speed&quot; is 400000.
+#axes_map: x, y, z
+#   See the &quot;adxl345&quot; section for information on this parameter.
+</code></pre></div>
+
 <h3 id="lis2dw">[lis2dw]<a class="headerlink" href="#lis2dw" title="Permanent link">&para;</a></h3>
 <p>Support for LIS2DW accelerometers.</p>
 <div class="highlight"><pre><span></span><code>[lis2dw]
-cs_pin:
-#   The SPI enable pin for the sensor. This parameter must be provided.
+#cs_pin:
+#   The SPI enable pin for the sensor. This parameter must be provided
+#   if using SPI.
 #spi_speed: 5000000
 #   The SPI speed (in hz) to use when communicating with the chip.
 #   The default is 5000000.
@@ -5425,6 +5692,43 @@ cs_pin:
 #spi_software_miso_pin:
 #   See the &quot;common SPI settings&quot; section for a description of the
 #   above parameters.
+#i2c_address:
+#   Default is 25 (0x19). If SA0 is high, it would be 24 (0x18) instead.
+#i2c_mcu:
+#i2c_bus:
+#i2c_software_scl_pin:
+#i2c_software_sda_pin:
+#i2c_speed: 400000
+#   See the &quot;common I2C settings&quot; section for a description of the
+#   above parameters. The default &quot;i2c_speed&quot; is 400000.
+#axes_map: x, y, z
+#   See the &quot;adxl345&quot; section for information on this parameter.
+</code></pre></div>
+
+<h3 id="lis3dh">[lis3dh]<a class="headerlink" href="#lis3dh" title="Permanent link">&para;</a></h3>
+<p>Support for LIS3DH accelerometers.</p>
+<div class="highlight"><pre><span></span><code>[lis3dh]
+#cs_pin:
+#   The SPI enable pin for the sensor. This parameter must be provided
+#   if using SPI.
+#spi_speed: 5000000
+#   The SPI speed (in hz) to use when communicating with the chip.
+#   The default is 5000000.
+#spi_bus:
+#spi_software_sclk_pin:
+#spi_software_mosi_pin:
+#spi_software_miso_pin:
+#   See the &quot;common SPI settings&quot; section for a description of the
+#   above parameters.
+#i2c_address:
+#   Default is 25 (0x19). If SA0 is high, it would be 24 (0x18) instead.
+#i2c_mcu:
+#i2c_bus:
+#i2c_software_scl_pin:
+#i2c_software_sda_pin:
+#i2c_speed: 400000
+#   See the &quot;common I2C settings&quot; section for a description of the
+#   above parameters. The default &quot;i2c_speed&quot; is 400000.
 #axes_map: x, y, z
 #   See the &quot;adxl345&quot; section for information on this parameter.
 </code></pre></div>
@@ -5482,11 +5786,14 @@ section of the measuring resonances guide for more information on
 #   auto-calibration (with &#39;SHAPER_CALIBRATE&#39; command). By default no
 #   maximum smoothing is specified. Refer to Measuring_Resonances guide
 #   for more details on using this feature.
+#move_speed: 50
+#   The speed (in mm/s) to move the toolhead to and between test points
+#   during the calibration. The default is 50.
 #min_freq: 5
 #   Minimum frequency to test for resonances. The default is 5 Hz.
 #max_freq: 133.33
 #   Maximum frequency to test for resonances. The default is 133.33 Hz.
-#accel_per_hz: 75
+#accel_per_hz: 60
 #   This parameter is used to determine which acceleration to use to
 #   test a specific frequency: accel = accel_per_hz * freq. Higher the
 #   value, the higher is the energy of the oscillations. Can be set to
@@ -5500,6 +5807,13 @@ section of the measuring resonances guide for more information on
 #   hz_per_sec. Small values make the test slow, and the large values
 #   will decrease the precision of the test. The default value is 1.0
 #   (Hz/sec == sec^-2).
+#sweeping_accel: 400
+#   An acceleration of slow sweeping moves. The default is 400 mm/sec^2.
+#sweeping_period: 1.2
+#   A period of slow sweeping moves. Setting this parameter to 0
+#   disables slow sweeping moves. Avoid setting it to a too small
+#   non-zero value in order to not poison the measurements.
+#   The default is 1.2 sec which is a good all-round choice.
 </code></pre></div>
 
 <h2 id="config-file-helpers">Config file helpers<a class="headerlink" href="#config-file-helpers" title="Permanent link">&para;</a></h2>
@@ -5724,6 +6038,9 @@ z_offset:
 sensor_type: ldc1612
 #   The sensor chip used to perform eddy current measurements. This
 #   parameter must be provided and must be set to ldc1612.
+#frequency:
+#   The external crystal frequency (in Hz) of the LDC1612 chip.
+#   The default is 12000000.
 #intb_pin:
 #   MCU gpio pin connected to the ldc1612 sensor&#39;s INTB pin (if
 #   available). The default is to not use the INTB pin.
@@ -5751,9 +6068,9 @@ sensor_type: ldc1612
 </code></pre></div>
 
 <h3 id="axis_twist_compensation">[axis_twist_compensation]<a class="headerlink" href="#axis_twist_compensation" title="Permanent link">&para;</a></h3>
-<p>A tool to compensate for inaccurate probe readings due to twist in X gantry. See
-the <a href="Axis_Twist_Compensation.html">Axis Twist Compensation Guide</a> for more
-detailed information regarding symptoms, configuration and setup.</p>
+<p>A tool to compensate for inaccurate probe readings due to twist in X or Y
+gantry. See the <a href="Axis_Twist_Compensation.html">Axis Twist Compensation Guide</a>
+for more detailed information regarding symptoms, configuration and setup.</p>
 <div class="highlight"><pre><span></span><code>[axis_twist_compensation]
 #speed: 50
 #   The speed (in mm/s) of non-probing moves during the calibration.
@@ -5764,16 +6081,33 @@ detailed information regarding symptoms, configuration and setup.</p>
 calibrate_start_x: 20
 #   Defines the minimum X coordinate of the calibration
 #   This should be the X coordinate that positions the nozzle at the starting
-#   calibration position. This parameter must be provided.
+#   calibration position.
 calibrate_end_x: 200
 #   Defines the maximum X coordinate of the calibration
 #   This should be the X coordinate that positions the nozzle at the ending
-#   calibration position. This parameter must be provided.
+#   calibration position.
 calibrate_y: 112.5
 #   Defines the Y coordinate of the calibration
 #   This should be the Y coordinate that positions the nozzle during the
-#   calibration process. This parameter must be provided and is recommended to
+#   calibration process. This parameter is recommended to
 #   be near the center of the bed
+
+# For Y-axis twist compensation, specify the following parameters:
+calibrate_start_y: ...
+#   Defines the minimum Y coordinate of the calibration
+#   This should be the Y coordinate that positions the nozzle at the starting
+#   calibration position for the Y axis. This parameter must be provided if
+#   compensating for Y axis twist.
+calibrate_end_y: ...
+#   Defines the maximum Y coordinate of the calibration
+#   This should be the Y coordinate that positions the nozzle at the ending
+#   calibration position for the Y axis. This parameter must be provided if
+#   compensating for Y axis twist.
+calibrate_x: ...
+#   Defines the X coordinate of the calibration for Y axis twist compensation
+#   This should be the X coordinate that positions the nozzle during the
+#   calibration process for Y axis twist compensation. This parameter must be
+#   provided and is recommended to be near the center of the bed.
 </code></pre></div>
 
 <h2 id="additional-stepper-motors-and-extruders">Additional stepper motors and extruders<a class="headerlink" href="#additional-stepper-motors-and-extruders" title="Permanent link">&para;</a></h2>
@@ -5815,8 +6149,8 @@ for an example configuration.</p>
 </code></pre></div>
 
 <h3 id="dual_carriage">[dual_carriage]<a class="headerlink" href="#dual_carriage" title="Permanent link">&para;</a></h3>
-<p>Support for cartesian and hybrid_corexy/z printers with dual carriages
-on a single axis. The carriage mode can be set via the
+<p>Support for cartesian, generic_cartesian and hybrid_corexy/z printers with
+dual carriages on a single axis. The carriage mode can be set via the
 SET_DUAL_CARRIAGE extended g-code command. For example,
 "SET_DUAL_CARRIAGE CARRIAGE=1" command will activate the carriage defined
 in this section (CARRIAGE=0 will return activation to the primary carriage).
@@ -5841,7 +6175,7 @@ typically be achieved with
 "SYNC_EXTRUDER_MOTION MOTION_QUEUE=extruder EXTRUDER=<dual_carriage_extruder>"
 or a similar command.</p>
 <p>See <a href="https://github.com/Klipper3d/klipper/blob/master/config/sample-idex.cfg">sample-idex.cfg</a> for an example
-configuration.</p>
+configuration with a regular Cartesian kinematic.</p>
 <div class="highlight"><pre><span></span><code>[dual_carriage]
 axis:
 #   The axis this extra carriage is on (either x or y). This parameter
@@ -5853,7 +6187,7 @@ axis:
 #   error. If safe_distance is not provided, it will be inferred from
 #   position_min and position_max for the dual and primary carriages. If set
 #   to 0 (or safe_distance is unset and position_min and position_max are
-#   identical for the primary and dual carraiges), the carriages proximity
+#   identical for the primary and dual carriages), the carriages proximity
 #   checks will be disabled.
 #step_pin:
 #dir_pin:
@@ -5867,6 +6201,79 @@ axis:
 #   See the &quot;stepper&quot; section for the definition of the above parameters.
 </code></pre></div>
 
+<p>For an example of dual carriage configuration with <code>generic_cartesian</code>
+kinematic, see the following configuration
+<a href="https://github.com/Klipper3d/klipper/blob/master/config/example-generic-caretesian.cfg">sample</a>.
+Please note that in this case the <code>[dual_carriage]</code> configuration deviates
+from the configuration described above:</p>
+<div class="highlight"><pre><span></span><code>[dual_carriage my_dc_carriage]
+primary_carriage:
+#   Defines the matching primary carriage of this dual carriage and
+#   the corresponding IDEX axis. Valid choices are x, y, z.
+#   This parameter must be provided.
+#safe_distance:
+#   The minimum distance (in mm) to enforce between the dual and the primary
+#   carriages. If a G-Code command is executed that will bring the carriages
+#   closer than the specified limit, such a command will be rejected with an
+#   error. If safe_distance is not provided, it will be inferred from
+#   position_min and position_max for the dual and primary carriages. If set
+#   to 0 (or safe_distance is unset and position_min and position_max are
+#   identical for the primary and dual carriages), the carriages proximity
+#   checks will be disabled.
+endstop_pin:
+#position_min:
+position_endstop:
+position_max:
+#homing_speed:
+#homing_retract_dist:
+#homing_retract_speed:
+#second_homing_speed:
+#homing_positive_dir:
+...
+</code></pre></div>
+
+<p>Refer to <a href="#generic-cartesian">generic cartesian</a> section for more information
+on the regular <code>carriage</code> parameters.</p>
+<p>Then a user must define one or more stepper motors moving the dual carriage
+(and other carriages as appropriate), for instance</p>
+<div class="highlight"><pre><span></span><code>[carriage x]
+...
+
+[carriage y]
+...
+
+[dual_carriage u]
+primary_carriage: x
+...
+
+[stepper dc_stepper]
+carriages: u-y
+...
+</code></pre></div>
+
+<p><code>[dual_carriage]</code> requires special configuration for the input shaper.
+In general, it is necessary to run input shaper calibration twice -
+for the <code>dual_carriage</code> and its <code>primary_carriage</code> for the axis they
+share. Then the input shaper can be configured as follows, assuming the
+example above:</p>
+<div class="highlight"><pre><span></span><code>[input_shaper]
+# Intentionally empty
+
+[delayed_gcode init_shaper]
+initial_duration: 0.1
+gcode:
+  SET_DUAL_CARRIAGE CARRIAGE=u
+  SET_INPUT_SHAPER SHAPER_TYPE_X=&lt;dual_carriage_x_shaper&gt; SHAPER_FREQ_X=&lt;dual_carriage_x_freq&gt; SHAPER_TYPE_Y=&lt;y_shaper&gt; SHAPER_FREQ_Y=&lt;y_freq&gt;
+  SET_DUAL_CARRIAGE CARRIAGE=x
+  SET_INPUT_SHAPER SHAPER_TYPE_X=&lt;primary_carriage_x_shaper&gt; SHAPER_FREQ_X=&lt;primary_carriage_x_freq&gt; SHAPER_TYPE_Y=&lt;y_shaper&gt; SHAPER_FREQ_Y=&lt;y_freq&gt;
+</code></pre></div>
+
+<p>Note that <code>SHAPER_TYPE_Y</code> and <code>SHAPER_FREQ_Y</code> must be the same in both
+commands in this case, since the same motors drive Y axis when either
+of the <code>x</code> and <code>u</code> carriages are active.</p>
+<p>It is worth noting that <code>generic_cartesian</code> kinematic can support two
+dual carriages for X and Y axes. For reference, see for instance a
+<a href="https://github.com/Klipper3d/klipper/blob/master/config/sample-corexyuv.cfg">sample</a> of CoreXYUV configuration.</p>
 <h3 id="extruder_stepper">[extruder_stepper]<a class="headerlink" href="#extruder_stepper" title="Permanent link">&para;</a></h3>
 <p>Support for additional steppers synchronized to the movement of an
 extruder (one may define any number of sections with an
@@ -5914,6 +6321,13 @@ printer kinematics.</p>
 #   Endstop switch detection pin. If specified, then one may perform
 #   &quot;homing moves&quot; by adding a STOP_ON_ENDSTOP parameter to
 #   MANUAL_STEPPER movement commands.
+#position_min:
+#position_max:
+#   The minimum and maximum position the stepper can be commanded to
+#   move to. If specified then one may not command the stepper to move
+#   past the given position. Note that these limits do not prevent
+#   setting an arbitrary position with the `MANUAL_STEPPER
+#   SET_POSITION=x` command. The default is to not enforce a limit.
 </code></pre></div>
 
 <h2 id="custom-heaters-and-sensors">Custom heaters and sensors<a class="headerlink" href="#custom-heaters-and-sensors" title="Permanent link">&para;</a></h2>
@@ -6726,11 +7140,6 @@ clock_pin:
 #i2c_speed:
 #   See the &quot;common I2C settings&quot; section for a description of the
 #   above parameters.
-#scl_pin:
-#sda_pin:
-#   Alternatively, if the pca9632 is not connected to a hardware I2C
-#   bus, then one may specify the &quot;clock&quot; (scl_pin) and &quot;data&quot;
-#   (sda_pin) pins. The default is to use hardware I2C.
 #color_order: RGBW
 #   Set the pixel order of the LED (using a string containing the
 #   letters R, G, B, W). The default is RGBW.
@@ -6793,6 +7202,10 @@ pin:
 #   A list of G-Code commands to execute when the button is released.
 #   G-Code templates are supported. The default is to not run any
 #   commands on a button release.
+#debounce_delay:
+#   A period of time in seconds to debounce events prior to running the
+#   button gcode. If the button is pressed and released during this
+#   delay, the entire button press is ignored. Default is 0.
 </code></pre></div>
 
 <h3 id="output_pin">[output_pin]<a class="headerlink" href="#output_pin" title="Permanent link">&para;</a></h3>
@@ -6951,8 +7364,9 @@ run_current:
 #stealthchop_threshold: 0
 #   The velocity (in mm/s) to set the &quot;stealthChop&quot; threshold to. When
 #   set, &quot;stealthChop&quot; mode will be enabled if the stepper motor
-#   velocity is below this value. The default is 0, which disables
-#   &quot;stealthChop&quot; mode.
+#   velocity is below this value. Note that the &quot;sensorless homing&quot;
+#   code may temporarily override this setting during homing
+#   operations. The default is 0, which disables &quot;stealthChop&quot; mode.
 #coolstep_threshold:
 #   The velocity (in mm/s) to set the TMC driver internal &quot;CoolStep&quot;
 #   threshold to. If set, the coolstep feature will be enabled when
@@ -7001,6 +7415,7 @@ run_current:
 #driver_PWM_FREQ: 1
 #driver_PWM_GRAD: 4
 #driver_PWM_AMPL: 128
+#driver_FREEWHEEL: 0
 #driver_SGT: 0
 #driver_SEMIN: 0
 #driver_SEUP: 0
@@ -7061,8 +7476,9 @@ run_current:
 #stealthchop_threshold: 0
 #   The velocity (in mm/s) to set the &quot;stealthChop&quot; threshold to. When
 #   set, &quot;stealthChop&quot; mode will be enabled if the stepper motor
-#   velocity is below this value. The default is 0, which disables
-#   &quot;stealthChop&quot; mode.
+#   velocity is below this value. Note that the &quot;sensorless homing&quot;
+#   code may temporarily override this setting during homing
+#   operations. The default is 0, which disables &quot;stealthChop&quot; mode.
 #driver_MULTISTEP_FILT: True
 #driver_IHOLDDELAY: 8
 #driver_TPOWERDOWN: 20
@@ -7077,6 +7493,7 @@ run_current:
 #driver_PWM_FREQ: 1
 #driver_PWM_GRAD: 14
 #driver_PWM_OFS: 36
+#driver_FREEWHEEL: 0
 #   Set the given register during the configuration of the TMC2208
 #   chip. This may be used to set custom motor parameters. The
 #   defaults for each parameter are next to the parameter name in the
@@ -7123,6 +7540,7 @@ run_current:
 #driver_PWM_FREQ: 1
 #driver_PWM_GRAD: 14
 #driver_PWM_OFS: 36
+#driver_FREEWHEEL: 0
 #driver_SGTHRS: 0
 #driver_SEMIN: 0
 #driver_SEUP: 0
@@ -7255,8 +7673,9 @@ run_current:
 #stealthchop_threshold: 0
 #   The velocity (in mm/s) to set the &quot;stealthChop&quot; threshold to. When
 #   set, &quot;stealthChop&quot; mode will be enabled if the stepper motor
-#   velocity is below this value. The default is 0, which disables
-#   &quot;stealthChop&quot; mode.
+#   velocity is below this value. Note that the &quot;sensorless homing&quot;
+#   code may temporarily override this setting during homing
+#   operations. The default is 0, which disables &quot;stealthChop&quot; mode.
 #coolstep_threshold:
 #   The velocity (in mm/s) to set the TMC driver internal &quot;CoolStep&quot;
 #   threshold to. If set, the coolstep feature will be enabled when
@@ -7329,6 +7748,7 @@ run_current:
 #driver_SEIMIN: 0
 #driver_SFILT: 0
 #driver_SG4_ANGLE_OFFSET: 1
+#driver_SLOPE_CONTROL: 0
 #   Set the given register during the configuration of the TMC2240
 #   chip. This may be used to set custom motor parameters. The
 #   defaults for each parameter are next to the parameter name in the
@@ -7385,8 +7805,9 @@ run_current:
 #stealthchop_threshold: 0
 #   The velocity (in mm/s) to set the &quot;stealthChop&quot; threshold to. When
 #   set, &quot;stealthChop&quot; mode will be enabled if the stepper motor
-#   velocity is below this value. The default is 0, which disables
-#   &quot;stealthChop&quot; mode.
+#   velocity is below this value. Note that the &quot;sensorless homing&quot;
+#   code may temporarily override this setting during homing
+#   operations. The default is 0, which disables &quot;stealthChop&quot; mode.
 #coolstep_threshold:
 #   The velocity (in mm/s) to set the TMC driver internal &quot;CoolStep&quot;
 #   threshold to. If set, the coolstep feature will be enabled when
@@ -7581,14 +8002,19 @@ prefix).</p>
 </code></pre></div>
 
 <h3 id="mcp4018">[mcp4018]<a class="headerlink" href="#mcp4018" title="Permanent link">&para;</a></h3>
-<p>Statically configured MCP4018 digipot connected via two gpio "bit
-banging" pins (one may define any number of sections with an "mcp4018"
-prefix).</p>
+<p>Statically configured MCP4018 digipot connected via i2c (one may
+define any number of sections with an "mcp4018" prefix).</p>
 <div class="highlight"><pre><span></span><code>[mcp4018 my_digipot]
-scl_pin:
-#   The SCL &quot;clock&quot; pin. This parameter must be provided.
-sda_pin:
-#   The SDA &quot;data&quot; pin. This parameter must be provided.
+#i2c_address: 47
+#   The i2c address that the chip is using on the i2c bus. The default
+#   is 47.
+#i2c_mcu:
+#i2c_bus:
+#i2c_software_scl_pin:
+#i2c_software_sda_pin:
+#i2c_speed:
+#   See the &quot;common I2C settings&quot; section for a description of the
+#   above parameters.
 wiper:
 #   The value to statically set the given MCP4018 &quot;wiper&quot; to. This is
 #   typically set to a number between 0.0 and 1.0 with 1.0 being the
@@ -7612,15 +8038,16 @@ wiper:
 <div class="highlight"><pre><span></span><code>[display]
 lcd_type:
 #   The type of LCD chip in use. This may be &quot;hd44780&quot;, &quot;hd44780_spi&quot;,
-#   &quot;st7920&quot;, &quot;emulated_st7920&quot;, &quot;uc1701&quot;, &quot;ssd1306&quot;, or &quot;sh1106&quot;.
+#   &quot;aip31068_spi&quot;, &quot;st7920&quot;, &quot;emulated_st7920&quot;, &quot;uc1701&quot;, &quot;ssd1306&quot;, or
+#   &quot;sh1106&quot;.
 #   See the display sections below for information on each type and
 #   additional parameters they provide. This parameter must be
 #   provided.
 #display_group:
 #   The name of the display_data group to show on the display. This
 #   controls the content of the screen (see the &quot;display_data&quot; section
-#   for more information). The default is _default_20x4 for hd44780
-#   displays and _default_16x4 for other displays.
+#   for more information). The default is _default_20x4 for hd44780 or
+#   aip31068_spi displays and _default_16x4 for other displays.
 #menu_timeout:
 #   Timeout for menu. Being inactive this amount of seconds will
 #   trigger menu exit or return to root menu when having autorun
@@ -7733,6 +8160,28 @@ spi_software_miso_pin:
 #   Perform 8-bit/4-bit protocol initialization on an hd44780 display.
 #   This is necessary on real hd44780 devices. However, one may need
 #   to disable this on some &quot;clone&quot; devices. The default is True.
+#line_length:
+#   Set the number of characters per line for an hd44780 type lcd.
+#   Possible values are 20 (default) and 16. The number of lines is
+#   fixed to 4.
+...
+</code></pre></div>
+
+<h4 id="aip31068_spi-display">aip31068_spi display<a class="headerlink" href="#aip31068_spi-display" title="Permanent link">&para;</a></h4>
+<p>Information on configuring an aip31068_spi display - a very similar to hd44780_spi
+a 20x04 (20 symbols by 4 lines) display with slightly different internal
+protocol.</p>
+<div class="highlight"><pre><span></span><code>[display]
+lcd_type: aip31068_spi
+latch_pin:
+spi_software_sclk_pin:
+spi_software_mosi_pin:
+spi_software_miso_pin:
+#   The pins connected to the shift register controlling the display.
+#   The spi_software_miso_pin needs to be set to an unused pin of the
+#   printer mainboard as the shift register does not have a MISO pin,
+#   but the software spi implementation requires this pin to be
+#   configured.
 #line_length:
 #   Set the number of characters per line for an hd44780 type lcd.
 #   Possible values are 20 (default) and 16. The number of lines is
@@ -8029,6 +8478,11 @@ more information.</p>
 #   dispatch and execution of the runout_gcode. It may be useful to
 #   increase this delay if OctoPrint exhibits strange pause behavior.
 #   Default is 0.5 seconds.
+#debounce_delay:
+#   A period of time in seconds to debounce events prior to running the
+#   switch gcode. The switch must he held in a single state for at least
+#   this long to activate. If the switch is toggled on/off during this delay,
+#   the event is ignored. Default is 0.
 #switch_pin:
 #   The pin on which the switch is connected. This parameter must be
 #   provided.
@@ -8133,9 +8587,19 @@ scale.</p>
 <div class="highlight"><pre><span></span><code>[load_cell]
 sensor_type:
 #   This must be one of the supported sensor types, see below.
+#counts_per_gram:
+#   The floating point number of sensor counts that indicates 1 gram of force.
+#   This value is calculated by the LOAD_CELL_CALIBRATE command.
+#reference_tare_counts:
+#   The integer tare value, in raw sensor counts, taken when LOAD_CELL_CALIBRATE
+#   is run. This is the default tare value when klipper starts up.
+#sensor_orientation:
+#   Change the sensor&#39;s orientation. Can be either &#39;normal&#39; or &#39;inverted&#39;.
+#   The default is &#39;normal&#39;. Use &#39;inverted&#39; if the sensor reports a
+#   decreasing force value when placed under load.
 </code></pre></div>
 
-<h4 id="xh711">XH711<a class="headerlink" href="#xh711" title="Permanent link">&para;</a></h4>
+<h4 id="hx711">HX711<a class="headerlink" href="#hx711" title="Permanent link">&para;</a></h4>
 <p>This is a 24 bit low sample rate chip using "bit-bang" communications. It is
 suitable for filament scales.</p>
 <div class="highlight"><pre><span></span><code>[load_cell]
@@ -8200,13 +8664,87 @@ data_ready_pin:
 #gain: 128
 #   Valid gain values are 128, 64, 32, 16, 8, 4, 2, 1
 #   The default is 128
+#pga_bypass: False
+#   Disable the internal Programmable Gain Amplifier. If
+#   True the PGA will be disabled for gains 1, 2, and 4. The PGA is always
+#   enabled for gain settings 8 to 128, regardless of the pga_bypass setting.
+#   If AVSS is used as an input pga_bypass is forced to True.
+#   The default is False.
 #sample_rate: 660
 #   This chip supports two ranges of sample rates, Normal and Turbo. In turbo
-#   mode the chips c internal clock runs twice as fast and the SPI communication
+#   mode the chip&#39;s internal clock runs twice as fast and the SPI communication
 #   speed is also doubled.
 #   Normal sample rates: 20, 45, 90, 175, 330, 600, 1000
 #   Turbo sample rates: 40, 90, 180, 350, 660, 1200, 2000
 #   The default is 660
+#input_mux:
+#   Input multiplexer configuration, select a pair of pins to use. The first pin
+#   is the positive, AINP, and the second pin is the negative, AINN. Valid
+#   values are: &#39;AIN0_AIN1&#39;, &#39;AIN0_AIN2&#39;, &#39;AIN0_AIN3&#39;, &#39;AIN1_AIN2&#39;, &#39;AIN1_AIN3&#39;,
+#   &#39;AIN2_AIN3&#39;, &#39;AIN1_AIN0&#39;, &#39;AIN3_AIN2&#39;, &#39;AIN0_AVSS&#39;, &#39;AIN1_AVSS&#39;, &#39;AIN2_AVSS&#39;
+#   and &#39;AIN3_AVSS&#39;. If AVSS is used the PGA is bypassed and the pga_bypass
+#   setting will be forced to True.
+#   The default is AIN0_AIN1.
+#vref:
+#   The selected voltage reference. Valid values are: &#39;internal&#39;, &#39;REF0&#39;, &#39;REF1&#39;
+#   and &#39;analog_supply&#39;. Default is &#39;internal&#39;.
+</code></pre></div>
+
+<h3 id="load_cell_probe">[load_cell_probe]<a class="headerlink" href="#load_cell_probe" title="Permanent link">&para;</a></h3>
+<p>Load Cell Probe. This combines the functionality of a [probe] and a [load_cell].</p>
+<div class="highlight"><pre><span></span><code>[load_cell_probe]
+sensor_type:
+#   This must be one of the supported bulk ADC sensor types and support
+#   load cell endstops on the mcu.
+#counts_per_gram:
+#reference_tare_counts:
+#sensor_orientation:
+#   These parameters must be configured before the probe will operate.
+#   See the [load_cell] section for further details.
+#force_safety_limit: 2000
+#   The safe limit for probing force relative to the reference_tare_counts on
+#   the load_cell. The default is +/-2Kg.
+#trigger_force: 75.0
+#   The force that the probe will trigger at. 75g is the default.
+#drift_filter_cutoff_frequency: 0.8
+#   Enable optional continuous taring while homing &amp; probing to reject drift.
+#   The value is a frequency, in Hz, below which drift will be ignored. This
+#   option requires the SciPy library. Default: None
+#drift_filter_delay: 2
+#   The delay, or &#39;order&#39;, of the drift filter. This controls the number of
+#   samples required to make a trigger detection. Can be 1 or 2, the default
+#   is 2.
+#buzz_filter_cutoff_frequency: 100.0
+#   The value is a frequency, in Hz, above which high frequency noise in the
+#   load cell will be igfiltered outnored. This option requires the SciPy
+#   library. Default: None
+#buzz_filter_delay: 2
+#   The delay, or &#39;order&#39;, of the buzz filter. This controls the number of
+#   samples required to make a trigger detection. Can be 1 or 2, the default
+#   is 2.
+#notch_filter_frequencies: 50, 60
+#   1 or 2 frequencies, in Hz, to filter out of the load cell data. This is
+#   intended to reject power line noise. This option requires the SciPy
+#   library.  Default: None
+#notch_filter_quality: 2.0
+#   Controls how narrow the range of frequencies are that the notch filter
+#   removes. Larger numbers produce a narrower filter. Minimum value is 0.5 and
+#   maximum is 3.0. Default: 2.0
+#tare_time:
+#   The rime in seconds used for taring the load_cell before each probe. The
+#   default value is: 4 / 60 = 0.066. This collects samples from 4 cycles of
+#   60Hz mains power to cancel power line noise.
+#z_offset:
+#speed:
+#samples:
+#sample_retract_dist:
+#lift_speed:
+#samples_result:
+#samples_tolerance:
+#samples_tolerance_retries:
+#activate_gcode:
+#deactivate_gcode:
+#   See the &quot;[probe]&quot; section for a description of the above parameters.
 </code></pre></div>
 
 <h2 id="board-specific-hardware-support">Board specific hardware support<a class="headerlink" href="#board-specific-hardware-support" title="Permanent link">&para;</a></h2>
@@ -8283,6 +8821,44 @@ vssa_pin:
 #   noise. The default is 2 seconds.
 </code></pre></div>
 
+<h3 id="ads1x1x">[ads1x1x]<a class="headerlink" href="#ads1x1x" title="Permanent link">&para;</a></h3>
+<p>ADS1013, ADS1014, ADS1015, ADS1113, ADS1114 and ADS1115 are I2C based Analog to
+Digital Converters that can be used for temperature sensors. They provide 4
+analog input pins either as single line or as differential input.</p>
+<p>Note: Use caution if using this sensor to control heaters. The heater min_temp
+and max_temp are only verified in the host and only if the host is running and
+operating normally. (ADC inputs directly connected to the micro-controller
+verify min_temp and max_temp within the micro-controller and do not require a
+working connection to the host.)</p>
+<div class="highlight"><pre><span></span><code>[ads1x1x my_ads1x1x]
+chip: ADS1115
+#pga: 4.096V
+#   Default value is 4.096V. The maximum voltage range used for the input. This
+#   scales all values read from the ADC. Options are: 6.144V, 4.096V, 2.048V,
+#   1.024V, 0.512V, 0.256V
+#adc_voltage: 3.3
+#   The supply voltage for the device. This allows additional software scaling
+#   for all values read from the ADC.
+i2c_mcu: host
+i2c_bus: i2c.1
+#address_pin: GND
+#   Default value is GND.  There can be up to four addressed devices depending
+#   upon wiring of the device. Check the datasheet for details. The i2c_address
+#   can be specified directly instead of using the address_pin.
+</code></pre></div>
+
+<p>The chip provides pins that can be used on other sensors.</p>
+<div class="highlight"><pre><span></span><code>sensor_type: ...
+#   Can be any thermistor or adc_temperature.
+sensor_pin: my_ads1x1x:AIN0
+#   A combination of the name of the ads1x1x chip and the pin. Possible
+#   pin values are AIN0, AIN1, AIN2 and AIN3 for single ended lines and
+#   DIFF01, DIFF03, DIFF13 and DIFF23 for differential between their
+#   corresponding lines. For example
+#   DIFF03 measures the differential between line 0 and 3. Only specific
+#   combinations for the differentials are allowed.
+</code></pre></div>
+
 <h3 id="replicape">[replicape]<a class="headerlink" href="#replicape" title="Permanent link">&para;</a></h3>
 <p>Replicape support - see the <a href="Beaglebone.html">beaglebone guide</a> and the
 <a href="https://github.com/Klipper3d/klipper/blob/master/config/generic-replicape.cfg">generic-replicape.cfg</a> file for an
@@ -8356,7 +8932,7 @@ for full functionality.</p>
 Octoprint as they will conflict, and 1 will fail to initialize
 properly likely aborting your print.</p>
 <p>If you use Octoprint and stream gcode over the serial port instead of
-printing from virtual_sd, then remo <strong>M1</strong> and <strong>M0</strong> from <em>Pausing commands</em>
+printing from virtual_sd, then remove <strong>M1</strong> and <strong>M0</strong> from <em>Pausing commands</em>
 in <em>Settings &gt; Serial Connection &gt; Firmware &amp; protocol</em> will prevent
 the need to start print on the Palette 2 and unpausing in Octoprint
 for your print to begin.</p>
@@ -8377,14 +8953,15 @@ serial:
 
 <h3 id="angle">[angle]<a class="headerlink" href="#angle" title="Permanent link">&para;</a></h3>
 <p>Magnetic hall angle sensor support for reading stepper motor angle
-shaft measurements using a1333, as5047d, or tle5012b SPI chips.  The
-measurements are available via the <a href="API_Server.html">API Server</a> and
+shaft measurements using a1333, as5047d, mt6816, mt6826s,
+or tle5012b SPI chips.
+The measurements are available via the <a href="API_Server.html">API Server</a> and
 <a href="Debugging.html#motion-analysis-and-data-logging">motion analysis tool</a>.
 See the <a href="G-Codes.html#angle">G-Code reference</a> for available commands.</p>
 <div class="highlight"><pre><span></span><code>[angle my_angle_sensor]
 sensor_type:
 #   The type of the magnetic hall sensor chip. Available choices are
-#   &quot;a1333&quot;, &quot;as5047d&quot;, and &quot;tle5012b&quot;. This parameter must be
+#   &quot;a1333&quot;, &quot;as5047d&quot;, &quot;mt6816&quot;, &quot;mt6826s&quot;, and &quot;tle5012b&quot;. This parameter must be
 #   specified.
 #sample_period: 0.000400
 #   The query period (in seconds) to use during measurements. The
